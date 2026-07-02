@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NIRMAN Data Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ── Variables ─────────────────────────────── */
+:root{
+  --dg : #1a4d2e;   /* dark green  */
+  --mg : #2e7d52;   /* medium green*/
+  --ag : #4caf70;   /* accent green*/
+  --lg : #a8d5b5;   /* light green */
+  --pg : #e8f5ee;   /* pale green  */
+  --vg : #f2fbf5;   /* very pale   */
+  --wh : #ffffff;
+  --tx : #1a2e22;
+  --tm : #3d5a46;
+  --tl : #6b8f77;
+  --ok : #27ae60;
+  --wa : #e67e22;
+  --er : #c0392b;
+  --sh : rgba(26,77,46,.12);
+  --r  : 12px;
+  --r2 : 8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--vg);
+  color:var(--tx);
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ── Header ─────────────────────────────────── */
+header{
+  background:linear-gradient(135deg,var(--dg) 0%,var(--mg) 100%);
+  color:var(--wh);
+  padding:0 28px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  box-shadow:0 2px 12px var(--sh);
+  position:sticky;top:0;z-index:100;
+}
+header .logo{
+  width:36px;height:36px;
+  background:var(--ag);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+}
+header h1{font-size:1.25rem;font-weight:700;letter-spacing:-.2px}
+header .sub{font-size:.78rem;opacity:.7;margin-top:1px}
+header .spacer{flex:1}
+#excel-btn{
+  display:flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.15);
+  border:1.5px solid rgba(255,255,255,.3);
+  color:var(--wh);
+  border-radius:var(--r2);
+  padding:7px 14px;font-size:.84rem;font-weight:600;
+  cursor:pointer;transition:.2s;
+}
+#excel-btn:hover{background:rgba(255,255,255,.25)}
+#excel-btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ── Main layout ─────────────────────────────── */
+main{
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:20px;
+  padding:20px;
+  flex:1;
+  min-height:0;
+  overflow:hidden;
+}
+
+/* ── Cards ───────────────────────────────────── */
+.card{
+  background:var(--wh);
+  border-radius:var(--r);
+  box-shadow:0 2px 12px var(--sh);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+.card-header{
+  background:var(--pg);
+  border-bottom:1.5px solid var(--lg);
+  padding:14px 18px;
+  display:flex;align-items:center;gap:10px;
+}
+.card-header h2{font-size:.95rem;font-weight:700;color:var(--dg)}
+.card-header .badge{
+  margin-left:auto;
+  background:var(--ag);color:var(--wh);
+  font-size:.72rem;font-weight:700;
+  padding:2px 10px;border-radius:20px;
+}
+.card-body{flex:1;overflow-y:auto;padding:16px}
+
+/* ── Drop zone ───────────────────────────────── */
+#drop-zone{
+  border:2.5px dashed var(--lg);
+  border-radius:var(--r);
+  background:var(--pg);
+  padding:28px 16px;
+  text-align:center;
+  cursor:pointer;
+  transition:.25s;
+  margin-bottom:16px;
+}
+#drop-zone:hover,#drop-zone.drag-over{
+  border-color:var(--ag);
+  background:#ddf0e5;
+}
+#drop-zone .drop-icon{font-size:2.2rem;margin-bottom:8px}
+#drop-zone p{color:var(--tm);font-size:.88rem;line-height:1.6}
+#drop-zone strong{color:var(--mg)}
+#file-input{display:none}
+#browse-btn{
+  display:inline-block;margin-top:10px;
+  background:var(--mg);color:var(--wh);
+  border:none;border-radius:var(--r2);
+  padding:8px 18px;font-size:.84rem;font-weight:600;
+  cursor:pointer;transition:.2s;
+}
+#browse-btn:hover{background:var(--dg)}
+
+/* ── Form cards grid ─────────────────────────── */
+#forms-grid{display:flex;flex-direction:column;gap:10px}
+.form-card{
+  border:1.5px solid var(--pg);
+  border-radius:var(--r2);
+  padding:10px 12px;
+  display:flex;align-items:center;gap:12px;
+  cursor:pointer;
+  transition:.2s;
+  background:var(--wh);
+}
+.form-card:hover{border-color:var(--ag);background:var(--vg)}
+.form-card.active{border-color:var(--mg);background:var(--pg)}
+.form-card .thumb{
+  width:44px;height:52px;
+  border-radius:6px;
+  object-fit:cover;
+  flex-shrink:0;
+  border:1px solid var(--lg);
+}
+.form-card .fc-info{flex:1;min-width:0}
+.form-card .fc-name{
+  font-size:.84rem;font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.form-card .fc-size{font-size:.74rem;color:var(--tl);margin-top:2px}
+.form-card .fc-status{flex-shrink:0}
+.status-badge{
+  font-size:.7rem;font-weight:700;
+  padding:3px 9px;border-radius:20px;
+  white-space:nowrap;
+}
+.status-pending {background:#eee;color:#777}
+.status-processing{background:#fff3cd;color:#856404}
+.status-ok       {background:#d4edda;color:#155724}
+.status-review   {background:#fff3cd;color:#7d5a00}
+.status-error    {background:#f8d7da;color:#721c24}
+.form-card .del-btn{
+  background:none;border:none;
+  color:var(--tl);font-size:.95rem;
+  cursor:pointer;padding:4px;
+  border-radius:4px;transition:.15s;flex-shrink:0;
+}
+.form-card .del-btn:hover{color:var(--er);background:#fff0f0}
+
+/* ── Right panel (editor) ────────────────────── */
+#editor-panel .card-body{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+#editor-empty{
+  grid-column:1/-1;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  height:100%;min-height:280px;
+  color:var(--tl);gap:12px;
+}
+#editor-empty .empty-icon{font-size:3rem}
+#editor-img{
+  width:100%;
+  border-radius:var(--r2);
+  border:2px solid var(--lg);
+  object-fit:contain;
+  max-height:calc(100vh - 320px);
+}
+#editor-right{display:flex;flex-direction:column;gap:12px}
+#editor-title{font-size:.95rem;font-weight:700;color:var(--dg)}
+#review-badge{display:none}
+#editor-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.q-item{display:flex;flex-direction:column;gap:3px}
+.q-item label{font-size:.72rem;font-weight:600;color:var(--tm)}
+.q-item input{
+  border:1.5px solid var(--lg);
+  border-radius:6px;
+  padding:5px 8px;
+  font-size:.84rem;
+  font-family:'Inter',sans-serif;
+  color:var(--tx);
+  transition:.2s;
+  width:100%;
+}
+.q-item input:focus{outline:none;border-color:var(--ag);box-shadow:0 0 0 3px rgba(76,175,112,.15)}
+.q-item input.is-bad{border-color:var(--wa);background:#fff8f0}
+#save-edits-btn{
+  background:var(--mg);color:var(--wh);
+  border:none;border-radius:var(--r2);
+  padding:10px;font-size:.88rem;font-weight:700;
+  cursor:pointer;transition:.2s;width:100%;
+}
+#save-edits-btn:hover{background:var(--dg)}
+
+/* ── Bottom toolbar ──────────────────────────── */
+footer{
+  height:72px;
+  background:var(--wh);
+  border-top:1.5px solid var(--pg);
+  box-shadow:0 -2px 10px var(--sh);
+  display:flex;align-items:center;gap:16px;
+  padding:0 24px;
+  flex-shrink:0;
+}
+#start-btn{
+  display:flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--mg),var(--dg));
+  color:var(--wh);border:none;
+  border-radius:var(--r2);
+  padding:11px 24px;font-size:.92rem;font-weight:700;
+  cursor:pointer;transition:.2s;
+  box-shadow:0 4px 12px rgba(46,125,82,.35);
+}
+#start-btn:hover{box-shadow:0 6px 18px rgba(46,125,82,.5);transform:translateY(-1px)}
+#start-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.progress-wrap{flex:1;display:flex;flex-direction:column;gap:4px}
+#progress-label{font-size:.8rem;color:var(--tm);font-weight:500}
+#progress-bar-bg{
+  height:8px;border-radius:8px;
+  background:var(--pg);overflow:hidden;
+}
+#progress-bar{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--ag),var(--dg));
+  border-radius:8px;
+  transition:width .4s ease;
+}
+#status-text{font-size:.75rem;color:var(--tl)}
+
+/* ── Notification toast ──────────────────────── */
+#toast{
+  position:fixed;bottom:90px;right:24px;
+  background:var(--dg);color:var(--wh);
+  border-radius:var(--r2);padding:10px 18px;
+  font-size:.84rem;font-weight:500;
+  box-shadow:0 4px 16px var(--sh);
+  transform:translateY(20px);opacity:0;
+  transition:.3s;pointer-events:none;z-index:999;
+}
+#toast.show{transform:translateY(0);opacity:1}
+
+/* ── Scrollbar ───────────────────────────────── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--lg);border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────── -->
+<header>
+  <div class="logo">🌿</div>
+  <div>
+    <h1>NIRMAN Data Automation</h1>
+    <div class="sub">Automated Workshop Feedback Extractor</div>
+  </div>
+  <div class="spacer"></div>
+  <button id="excel-btn" onclick="openExcel()" disabled>
+    📊 View Excel
+  </button>
+</header>
+
+<!-- ── Main ───────────────────────────────────────── -->
+<main>
+
+  <!-- Left: Upload + Forms list -->
+  <div class="card">
+    <div class="card-header">
+      <span>📋</span>
+      <h2>Add the About Self Forms</h2>
+      <span class="badge" id="count-badge">0</span>
+    </div>
+    <div class="card-body">
+
+      <!-- Drop zone -->
+      <div id="drop-zone" onclick="document.getElementById('file-input').click()">
+        <div class="drop-icon">📂</div>
+        <p>Drag &amp; drop form images here<br/>
+           or click to browse files</p>
+        <p style="margin-top:6px;font-size:.76rem;color:var(--tl)">
+          Supports JPG, PNG, TIFF, BMP, WEBP
+        </p>
+        <button id="browse-btn" onclick="event.stopPropagation();document.getElementById('file-input').click()">
+          Browse Files
+        </button>
+      </div>
+      <input type="file" id="file-input" multiple
+             accept=".jpg,.jpeg,.png,.bmp,.tiff,.webp"
+             onchange="uploadFiles(this.files)"/>
+
+      <!-- Forms list -->
+      <div id="forms-grid"></div>
+    </div>
+  </div>
+
+  <!-- Right: Form viewer / editor -->
+  <div class="card" id="editor-panel">
+    <div class="card-header">
+      <span>✏️</span>
+      <h2>Form Viewer &amp; Editor</h2>
+      <span class="badge" id="review-badge" style="display:none;background:var(--wa)">Needs Review</span>
+    </div>
+    <div class="card-body" id="editor-body">
+      <div id="editor-empty">
+        <div class="empty-icon">👆</div>
+        <p>Select a form on the left to view and edit its extracted values.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── Footer toolbar ─────────────────────────────── -->
+<footer>
+  <button id="start-btn" onclick="startExtraction()">
+    ▶&nbsp; Start Automation
+  </button>
+  <div class="progress-wrap">
+    <div id="progress-label">Ready</div>
+    <div id="progress-bar-bg"><div id="progress-bar"></div></div>
+    <div id="status-text">Upload forms and click Start Automation to begin.</div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+/* ── State ──────────────────────────────────────────── */
+let allForms      = [];
+let activeForm    = null;
+let pollTimer     = null;
+let softRefreshTimer = null;   // Bug 3 fix: pausable soft-refresh
+const SENTINELS = new Set(["ILLEGIBLE","OUT_OF_RANGE","FIELD_MISSING","API_ERROR","PARSE_ERROR"]);
+
+function startSoftRefresh()  { if (!softRefreshTimer) softRefreshTimer = setInterval(refreshForms, 8000); }
+function pauseSoftRefresh()  { clearInterval(softRefreshTimer); softRefreshTimer = null; }
+
+/* ── Drag & Drop ─────────────────────────────────────── */
+const dz = document.getElementById("drop-zone");
+["dragenter","dragover"].forEach(e =>
+  dz.addEventListener(e, ev => { ev.preventDefault(); dz.classList.add("drag-over"); }));
+["dragleave","drop"].forEach(e =>
+  dz.addEventListener(e, ev => { ev.preventDefault(); dz.classList.remove("drag-over"); }));
+dz.addEventListener("drop", ev => uploadFiles(ev.dataTransfer.files));
+
+/* ── Upload ──────────────────────────────────────────── */
+async function uploadFiles(files) {
+  if (!files || !files.length) return;
+  const fd = new FormData();
+  [...files].forEach(f => fd.append("files", f));
+  const r = await fetch("/api/upload", { method:"POST", body:fd });
+  const d = await r.json();
+  if (d.saved?.length) toast(`✅ ${d.saved.length} form(s) added`);
+  if (d.errors?.length) toast(`⚠ ${d.errors.join(", ")}`, true);
+  refreshForms();
+}
+
+/* ── Forms list ──────────────────────────────────────── */
+async function refreshForms() {
+  const r  = await fetch("/api/forms");
+  allForms = await r.json();
+  document.getElementById("count-badge").textContent = allForms.length;
+  renderGrid();
+  // Update excel button
+  const hasDone = allForms.some(f => f.result);
+  document.getElementById("excel-btn").disabled = !hasDone;
+}
+
+function renderGrid() {
+  const grid = document.getElementById("forms-grid");
+  grid.innerHTML = "";
+  if (!allForms.length) {
+    grid.innerHTML = `<p style="text-align:center;color:var(--tl);font-size:.84rem;padding:20px 0">No forms added yet.</p>`;
+    return;
+  }
+  allForms.forEach(f => {
+    const isActive = activeForm === f.name;
+    const div = document.createElement("div");
+    div.className = "form-card" + (isActive ? " active" : "");
+    div.onclick   = () => openEditor(f.name);
+    const kb = (f.size / 1024).toFixed(0);
+    const {cls, label} = statusInfo(f);
+    div.innerHTML = `
+      <img class="thumb" src="/api/form-image/${encodeURIComponent(f.name)}" alt="${f.name}"/>
+      <div class="fc-info">
+        <div class="fc-name" title="${f.name}">${f.name}</div>
+        <div class="fc-size">${kb} KB</div>
+      </div>
+      <div class="fc-status"><span class="status-badge ${cls}">${label}</span></div>
+      <button class="del-btn" title="Remove" onclick="event.stopPropagation();deleteForm('${f.name}')">🗑</button>`;
+    grid.appendChild(div);
+  });
+}
+
+function statusInfo(f) {
+  if (!f.result) return {cls:"status-pending", label:"Pending"};
+  if (f.result === "__processing__") return {cls:"status-processing", label:"Processing…"};
+  if (f.result.Review_Required || f.result["Review Required"])
+    return {cls:"status-review", label:"⚠ Review"};
+  return {cls:"status-ok", label:"✓ Clean"};
+}
+
+/* ── Delete form ─────────────────────────────────────── */
+async function deleteForm(name) {
+  if (!confirm(`Remove "${name}" from the list?`)) return;
+  await fetch(`/api/delete/${encodeURIComponent(name)}`, {method:"DELETE"});
+  if (activeForm === name) {
+    activeForm = null;
+    resetEditor();
+  }
+  refreshForms();
+}
+
+/* ── Editor ──────────────────────────────────────────── */
+function openEditor(name) {
+  activeForm = name;
+  renderGrid();
+  const form = allForms.find(f => f.name === name);
+  if (!form) return;
+
+  const body = document.getElementById("editor-body");
+  const rb   = document.getElementById("review-badge");
+
+  if (!form.result) {
+    body.innerHTML = `
+      <div id="editor-empty">
+        <img id="editor-img" src="/api/form-image/${encodeURIComponent(name)}" alt="${name}"/>
+        <div id="editor-right">
+          <div id="editor-title">${name}</div>
+          <p style="color:var(--tl);font-size:.84rem">
+            This form has not been processed yet. Run extraction first.
+          </p>
+        </div>
+      </div>`;
+    rb.style.display = "none";
+    return;
+  }
+
+  const rec = form.result;
+  const needsReview = rec["Review Required"] || rec["Review_Required"];
+  rb.style.display = needsReview ? "inline-block" : "none";
+
+  // Build Q items
+  const qs = Array.from({length:30}, (_,i) => `Q${i+1}`);
+  const qHtml = qs.map(q => {
+    const val = rec[q] ?? "";
+    const isBad = SENTINELS.has(String(val).toUpperCase());
+    return `<div class="q-item">
+      <label>${q}</label>
+      <input id="inp-${q}" type="text" value="${val}" class="${isBad ? 'is-bad':''}"
+             oninput="markDirty(this)"/>
+    </div>`;
+  }).join("");
+
+  body.innerHTML = `
+    <img id="editor-img" src="/api/form-image/${encodeURIComponent(name)}" alt="${name}"/>
+    <div id="editor-right">
+      <div id="editor-title">📄 ${name}</div>
+      <div style="font-size:.78rem;color:var(--tl)">
+        Processed: ${rec["Processed At"] || "—"}
+      </div>
+      ${needsReview ? `<div class="status-badge status-review" style="width:fit-content">⚠ ${rec["Review Notes"] || "Needs manual review"}</div>` : ''}
+      <div id="editor-grid">${qHtml}</div>
+      <button id="save-edits-btn" onclick="saveEdits()">💾&nbsp; Save Edits &amp; Update Excel</button>
+    </div>`;
+}
+
+function markDirty(inp) {
+  const v = inp.value.trim().toUpperCase();
+  inp.classList.toggle("is-bad", SENTINELS.has(v));
+}
+
+function resetEditor() {
+  document.getElementById("editor-body").innerHTML = `
+    <div id="editor-empty">
+      <div class="empty-icon">👆</div>
+      <p>Select a form on the left to view and edit its extracted values.</p>
+    </div>`;
+  document.getElementById("review-badge").style.display = "none";
+}
+
+async function saveEdits() {
+  if (!activeForm) return;
+  const edits = {};
+  for (let i=1;i<=30;i++) {
+    const inp = document.getElementById(`inp-Q${i}`);
+    if (!inp) continue;
+    const v = inp.value.trim();
+    const num = parseFloat(v);
+    edits[`Q${i}`] = (!isNaN(num) && v !== "") ? num : v.toUpperCase();
+  }
+  const r = await fetch("/api/save-edit", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({filename:activeForm, edits})
+  });
+  const d = await r.json();
+  if (d.ok) {
+    toast("✅ Edits saved and Excel updated!");
+    // Update local result
+    const f = allForms.find(x => x.name === activeForm);
+    if (f) f.result = d.record;
+    openEditor(activeForm);
+    renderGrid();
+    document.getElementById("excel-btn").disabled = false;
+  } else {
+    toast(d.error || "Save failed", true);
+  }
+}
+
+/* ── Start extraction ────────────────────────────────── */
+async function startExtraction() {
+  const r = await fetch("/api/start", {method:"POST"});
+  const d = await r.json();
+  if (d.error) { toast(d.error, true); return; }
+  document.getElementById("start-btn").disabled = true;
+  pauseSoftRefresh();   // Bug 3 fix: stop soft-refresh while polling
+  pollTimer = setInterval(pollState, 1500);
+}
+
+async function pollState() {
+  const r = await fetch("/api/state");
+  const s = await r.json();
+
+  const pct = s.total ? Math.round(s.idx / s.total * 100) : 0;
+  document.getElementById("progress-bar").style.width = pct + "%";
+
+  if (s.running) {
+    document.getElementById("progress-label").textContent =
+      s.current_file ? `Processing: ${s.current_file}` : "Starting…";
+    document.getElementById("status-text").textContent =
+      `${s.idx} of ${s.total} forms processed`;
+    // Update form cards live
+    Object.entries(s.results || {}).forEach(([name, rec]) => {
+      const f = allForms.find(x => x.name === name);
+      if (f) f.result = rec;
+    });
+    renderGrid();
+    if (activeForm) {
+      const f = allForms.find(x => x.name === activeForm);
+      if (f?.result) openEditor(activeForm);
+    }
+  }
+
+  if (!s.running && s.done) {
+    clearInterval(pollTimer);
+    pollTimer = null;
+    startSoftRefresh();   // Bug 3 fix: resume soft-refresh after extraction
+    document.getElementById("start-btn").disabled = false;
+    document.getElementById("progress-bar").style.width = "100%";
+    if (s.error) {
+      document.getElementById("progress-label").textContent = "❌ Error";
+      document.getElementById("status-text").textContent = s.error;
+      toast(s.error, true);
+    } else {
+      document.getElementById("progress-label").textContent = "✅ Extraction complete!";
+      document.getElementById("status-text").textContent =
+        `${s.total} form(s) processed. Excel is ready.`;
+      document.getElementById("excel-btn").disabled = false;
+      toast("✅ All done! Click View Excel to open the results.");
+    }
+    // Final refresh
+    Object.entries(s.results || {}).forEach(([name, rec]) => {
+      const f = allForms.find(x => x.name === name);
+      if (f) f.result = rec;
+    });
+    renderGrid();
+    if (activeForm) openEditor(activeForm);
+  }
+}
+
+/* ── Open / download Excel ───────────────────────────── */
+async function openExcel() {
+  // Try to open with system app first
+  const r = await fetch("/api/open-excel");
+  const d = await r.json();
+  if (d.ok) {
+    toast("📊 Opening Excel…");
+  } else {
+    // Fallback: download
+    window.location.href = "/api/download-excel";
+  }
+}
+
+/* ── Toast ───────────────────────────────────────────── */
+let _toastTimer = null;
+function toast(msg, isError=false) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.style.background = isError ? "var(--er)" : "var(--dg)";
+  el.classList.add("show");
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => el.classList.remove("show"), 3500);
+}
+
+/* ── Init ────────────────────────────────────────────── */
+refreshForms();
+startSoftRefresh();   // Bug 3 fix: use pausable soft-refresh
+</script>
+</body>
+</html>
