@@ -362,7 +362,15 @@ def upload():
         if not f.filename:
             continue
 
-        is_valid, err = validate_upload(f.filename, f.content_length or 0)
+        # content_length is unreliable on serverless (often None/0 for
+        # multipart parts). Measure the actual stream size instead.
+        file_size = f.content_length or 0
+        if file_size <= 0:
+            pos = f.stream.tell()
+            f.stream.seek(0, os.SEEK_END)
+            file_size = f.stream.tell()
+            f.stream.seek(pos)
+        is_valid, err = validate_upload(f.filename, file_size)
         if not is_valid:
             errors.append(f"{f.filename}: {err}")
             continue
