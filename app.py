@@ -62,7 +62,7 @@ _state = {
     "report_text": None,
 }
 
-RESULTS_JSON = os.path.join(BASE_DIR, "results.json")
+RESULTS_JSON = str(config.OUTPUT_DIR / "results.json") if config.IS_VERCEL else os.path.join(BASE_DIR, "results.json")
 UPLOADS = config.UPLOADS_DIR
 FORMS = config.FORMS_DIR
 
@@ -459,8 +459,15 @@ def start():
             return jsonify({"error": "Extraction already running"}), 400
         if not _state["schema_confirmed"]:
             return jsonify({"error": "Schema not confirmed. Please confirm the schema first."}), 400
-    threading.Thread(target=_worker, daemon=True).start()
-    return jsonify({"ok": True})
+
+    if config.IS_VERCEL:
+        # Serverless: run extraction synchronously (no background threads)
+        _worker()
+        return jsonify({"ok": True, "mode": "sync"})
+    else:
+        # Local: run in background thread
+        threading.Thread(target=_worker, daemon=True).start()
+        return jsonify({"ok": True})
 
 
 @app.route("/api/state")
@@ -549,6 +556,8 @@ def download_excel():
 
 @app.route("/api/open-excel")
 def open_excel():
+    if config.IS_VERCEL:
+        return jsonify({"error": "Cannot open files on a serverless deployment. Use the download button instead."}), 400
     with _lock:
         path = _state.get("excel_path")
     if path and os.path.isfile(path):

@@ -30,13 +30,26 @@ _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 _load_env_file(str(_PROJECT_ROOT / ".env"))
 
 
+# ── Deployment detection ────────────────────────────────────────
+IS_VERCEL = bool(os.environ.get("VERCEL"))
+
 # ── Paths ───────────────────────────────────────────────────────
 BASE_DIR = _PROJECT_ROOT
-SCHEMAS_DIR = BASE_DIR / "schemas"
-UPLOADS_DIR = BASE_DIR / "uploads"
-OUTPUT_DIR = BASE_DIR / "output"
-FORMS_DIR = BASE_DIR / "forms"      # Legacy compat — also checked for uploads
-LOG_FILE = BASE_DIR / "extraction_log.txt"
+
+if IS_VERCEL:
+    # Vercel's filesystem is read-only except /tmp (ephemeral per invocation).
+    _TMP = Path("/tmp/nirman")
+    SCHEMAS_DIR = _TMP / "schemas"
+    UPLOADS_DIR = _TMP / "uploads"
+    OUTPUT_DIR = _TMP / "output"
+    FORMS_DIR = _TMP / "forms"
+    LOG_FILE = _TMP / "extraction_log.txt"
+else:
+    SCHEMAS_DIR = BASE_DIR / "schemas"
+    UPLOADS_DIR = BASE_DIR / "uploads"
+    OUTPUT_DIR = BASE_DIR / "output"
+    FORMS_DIR = BASE_DIR / "forms"      # Legacy compat — also checked for uploads
+    LOG_FILE = BASE_DIR / "extraction_log.txt"
 
 # Ensure directories exist
 for d in (SCHEMAS_DIR, UPLOADS_DIR, OUTPUT_DIR, FORMS_DIR):

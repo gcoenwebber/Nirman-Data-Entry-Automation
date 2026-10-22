@@ -34,6 +34,9 @@ def _configure_root_logger() -> None:
     """Attach a UTF-8 file handler to the root logger if not already done.
 
     Calling this more than once is safe — subsequent calls are no-ops.
+
+    On Vercel (read-only FS outside /tmp), falls back to a NullHandler
+    so that logging calls never raise.
     """
     global _configured
     if _configured:
@@ -49,14 +52,19 @@ def _configure_root_logger() -> None:
                 _configured = True
                 return
 
-    file_handler = logging.FileHandler(
-        str(config.LOG_FILE),
-        encoding="utf-8",
-        mode="a",
-    )
-    file_handler.setLevel(logging.INFO)
-    file_handler.setFormatter(logging.Formatter(_LOG_FORMAT))
-    root.addHandler(file_handler)
+    try:
+        file_handler = logging.FileHandler(
+            str(config.LOG_FILE),
+            encoding="utf-8",
+            mode="a",
+        )
+        file_handler.setLevel(logging.INFO)
+        file_handler.setFormatter(logging.Formatter(_LOG_FORMAT))
+        root.addHandler(file_handler)
+    except (OSError, PermissionError):
+        # Vercel or read-only FS — fall back to NullHandler
+        root.addHandler(logging.NullHandler())
+
     _configured = True
 
 
