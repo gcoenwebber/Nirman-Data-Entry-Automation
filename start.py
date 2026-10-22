@@ -30,7 +30,7 @@ if sys.version_info < (3, 9):
     sys.exit(1)
 
 print("=" * 60)
-print("  NIRMAN Data Automation Launcher")
+print("  NIRMAN Data Automation Platform v2.0")
 print("  Python:", sys.version.split()[0], " | CWD:", HERE)
 print("=" * 60)
 
@@ -57,7 +57,7 @@ if not os.path.isfile(APP):
     input("Press Enter to exit...")
     sys.exit(1)
 
-print("Starting NIRMAN Data Automation server...")
+print("Starting NIRMAN Data Automation Platform...")
 print("The browser should open automatically at http://127.0.0.1:5000")
 print("Press Ctrl+C to stop the server.\n")
 

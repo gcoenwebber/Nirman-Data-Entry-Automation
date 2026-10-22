@@ -7,633 +7,869 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-/* ── Variables ─────────────────────────────── */
 :root{
-  --dg : #1a4d2e;   /* dark green  */
-  --mg : #2e7d52;   /* medium green*/
-  --ag : #4caf70;   /* accent green*/
-  --lg : #a8d5b5;   /* light green */
-  --pg : #e8f5ee;   /* pale green  */
-  --vg : #f2fbf5;   /* very pale   */
-  --wh : #ffffff;
-  --tx : #1a2e22;
-  --tm : #3d5a46;
-  --tl : #6b8f77;
-  --ok : #27ae60;
-  --wa : #e67e22;
-  --er : #c0392b;
-  --sh : rgba(26,77,46,.12);
-  --r  : 12px;
-  --r2 : 8px;
+  --dg:#1a4d2e;--mg:#2e7d52;--ag:#4caf70;--lg:#a8d5b5;--pg:#e8f5ee;--vg:#f2fbf5;
+  --wh:#ffffff;--tx:#1a2e22;--tm:#3d5a46;--tl:#6b8f77;
+  --ok:#27ae60;--wa:#e67e22;--er:#c0392b;--info:#3498db;
+  --sh:rgba(26,77,46,.12);--r:12px;--r2:8px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--vg);
-  color:var(--tx);
-  height:100vh;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-}
+body{font-family:'Inter',sans-serif;background:var(--vg);color:var(--tx);height:100vh;overflow:hidden;display:flex;flex-direction:column}
 
-/* ── Header ─────────────────────────────────── */
-header{
-  background:linear-gradient(135deg,var(--dg) 0%,var(--mg) 100%);
-  color:var(--wh);
-  padding:0 28px;
-  height:64px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  box-shadow:0 2px 12px var(--sh);
-  position:sticky;top:0;z-index:100;
-}
-header .logo{
-  width:36px;height:36px;
-  background:var(--ag);
-  border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:20px;
-}
+/* Header */
+header{background:linear-gradient(135deg,var(--dg) 0%,var(--mg) 100%);color:var(--wh);padding:0 28px;height:64px;display:flex;align-items:center;gap:14px;box-shadow:0 2px 12px var(--sh);position:sticky;top:0;z-index:100}
+header .logo{width:36px;height:36px;background:var(--ag);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
 header h1{font-size:1.25rem;font-weight:700;letter-spacing:-.2px}
 header .sub{font-size:.78rem;opacity:.7;margin-top:1px}
 header .spacer{flex:1}
-#excel-btn{
-  display:flex;align-items:center;gap:7px;
-  background:rgba(255,255,255,.15);
-  border:1.5px solid rgba(255,255,255,.3);
-  color:var(--wh);
-  border-radius:var(--r2);
-  padding:7px 14px;font-size:.84rem;font-weight:600;
-  cursor:pointer;transition:.2s;
-}
-#excel-btn:hover{background:rgba(255,255,255,.25)}
-#excel-btn:disabled{opacity:.4;cursor:not-allowed}
+.hdr-btn{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);color:var(--wh);border-radius:var(--r2);padding:7px 14px;font-size:.84rem;font-weight:600;cursor:pointer;transition:.2s;margin-left:6px}
+.hdr-btn:hover{background:rgba(255,255,255,.25)}
+.hdr-btn:disabled{opacity:.4;cursor:not-allowed}
 
-/* ── Main layout ─────────────────────────────── */
-main{
-  display:grid;
-  grid-template-columns:380px 1fr;
-  gap:20px;
-  padding:20px;
-  flex:1;
-  min-height:0;
-  overflow:hidden;
-}
+/* Stepper */
+#stepper{display:flex;gap:0;padding:12px 24px 0;background:var(--wh);border-bottom:1.5px solid var(--pg)}
+.step-tab{padding:10px 20px;font-size:.84rem;font-weight:600;color:var(--tl);cursor:pointer;border-bottom:3px solid transparent;transition:.2s;white-space:nowrap}
+.step-tab:hover{color:var(--mg)}
+.step-tab.active{color:var(--dg);border-color:var(--ag)}
+.step-tab.disabled{opacity:.4;cursor:not-allowed}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--pg);color:var(--tl);font-size:.72rem;font-weight:700;margin-right:6px}
+.step-tab.active .step-num{background:var(--ag);color:var(--wh)}
+.step-tab.done .step-num{background:var(--ok);color:var(--wh)}
 
-/* ── Cards ───────────────────────────────────── */
-.card{
-  background:var(--wh);
-  border-radius:var(--r);
-  box-shadow:0 2px 12px var(--sh);
-  display:flex;flex-direction:column;
-  overflow:hidden;
-}
-.card-header{
-  background:var(--pg);
-  border-bottom:1.5px solid var(--lg);
-  padding:14px 18px;
-  display:flex;align-items:center;gap:10px;
-}
+/* Main */
+main{flex:1;overflow-y:auto;padding:20px}
+.step-panel{display:none;max-width:1200px;margin:0 auto}
+.step-panel.visible{display:block}
+.card{background:var(--wh);border-radius:var(--r);box-shadow:0 2px 12px var(--sh);overflow:hidden;margin-bottom:20px}
+.card-header{background:var(--pg);border-bottom:1.5px solid var(--lg);padding:14px 18px;display:flex;align-items:center;gap:10px}
 .card-header h2{font-size:.95rem;font-weight:700;color:var(--dg)}
-.card-header .badge{
-  margin-left:auto;
-  background:var(--ag);color:var(--wh);
-  font-size:.72rem;font-weight:700;
-  padding:2px 10px;border-radius:20px;
-}
-.card-body{flex:1;overflow-y:auto;padding:16px}
+.card-header .badge{margin-left:auto;background:var(--ag);color:var(--wh);font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:20px}
+.card-body{padding:16px}
 
-/* ── Drop zone ───────────────────────────────── */
-#drop-zone{
-  border:2.5px dashed var(--lg);
-  border-radius:var(--r);
-  background:var(--pg);
-  padding:28px 16px;
-  text-align:center;
-  cursor:pointer;
-  transition:.25s;
-  margin-bottom:16px;
-}
-#drop-zone:hover,#drop-zone.drag-over{
-  border-color:var(--ag);
-  background:#ddf0e5;
-}
-#drop-zone .drop-icon{font-size:2.2rem;margin-bottom:8px}
-#drop-zone p{color:var(--tm);font-size:.88rem;line-height:1.6}
-#drop-zone strong{color:var(--mg)}
-#file-input{display:none}
-#browse-btn{
-  display:inline-block;margin-top:10px;
-  background:var(--mg);color:var(--wh);
-  border:none;border-radius:var(--r2);
-  padding:8px 18px;font-size:.84rem;font-weight:600;
-  cursor:pointer;transition:.2s;
-}
-#browse-btn:hover{background:var(--dg)}
+/* Drop zone */
+.drop-zone{border:2.5px dashed var(--lg);border-radius:var(--r);background:var(--pg);padding:28px 16px;text-align:center;cursor:pointer;transition:.25s;margin-bottom:16px}
+.drop-zone:hover,.drop-zone.drag-over{border-color:var(--ag);background:#ddf0e5}
+.drop-zone .drop-icon{font-size:2.2rem;margin-bottom:8px}
+.drop-zone p{color:var(--tm);font-size:.88rem;line-height:1.6}
+.drop-zone strong{color:var(--mg)}
+.file-input{display:none}
+.btn{display:inline-flex;align-items:center;gap:6px;border:none;border-radius:var(--r2);padding:9px 18px;font-size:.84rem;font-weight:600;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--mg),var(--dg));color:var(--wh);box-shadow:0 4px 12px rgba(46,125,82,.35)}
+.btn-primary:hover{box-shadow:0 6px 18px rgba(46,125,82,.5);transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-secondary{background:var(--pg);color:var(--dg);border:1.5px solid var(--lg)}
+.btn-secondary:hover{background:var(--lg)}
+.btn-danger{background:#fff0f0;color:var(--er);border:1.5px solid #fdd}
+.btn-danger:hover{background:#ffe0e0}
+.btn-info{background:#eef6ff;color:var(--info);border:1.5px solid #cde}
+.btn-info:hover{background:#ddeeff}
 
-/* ── Form cards grid ─────────────────────────── */
-#forms-grid{display:flex;flex-direction:column;gap:10px}
-.form-card{
-  border:1.5px solid var(--pg);
-  border-radius:var(--r2);
-  padding:10px 12px;
-  display:flex;align-items:center;gap:12px;
-  cursor:pointer;
-  transition:.2s;
-  background:var(--wh);
-}
+/* Schema editor */
+.schema-field{display:grid;grid-template-columns:1fr 1.5fr 1fr .6fr .6fr .6fr;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--pg)}
+.schema-field:last-child{border:none}
+.schema-field input,.schema-field select{border:1.5px solid var(--lg);border-radius:6px;padding:5px 8px;font-size:.82rem;font-family:'Inter',sans-serif;color:var(--tx)}
+.schema-field input:focus,.schema-field select:focus{outline:none;border-color:var(--ag)}
+.schema-field label{font-size:.72rem;font-weight:600;color:var(--tm)}
+.schema-header{font-weight:700;font-size:.72rem;color:var(--tl);text-transform:uppercase;letter-spacing:.5px;padding-bottom:6px;border-bottom:2px solid var(--pg)}
+
+/* Form cards */
+.form-card{border:1.5px solid var(--pg);border-radius:var(--r2);padding:10px 12px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:.2s;background:var(--wh);margin-bottom:8px}
 .form-card:hover{border-color:var(--ag);background:var(--vg)}
 .form-card.active{border-color:var(--mg);background:var(--pg)}
-.form-card .thumb{
-  width:44px;height:52px;
-  border-radius:6px;
-  object-fit:cover;
-  flex-shrink:0;
-  border:1px solid var(--lg);
-}
+.form-card .thumb{width:44px;height:52px;border-radius:6px;object-fit:cover;flex-shrink:0;border:1px solid var(--lg)}
 .form-card .fc-info{flex:1;min-width:0}
-.form-card .fc-name{
-  font-size:.84rem;font-weight:600;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
+.form-card .fc-name{font-size:.84rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .form-card .fc-size{font-size:.74rem;color:var(--tl);margin-top:2px}
-.form-card .fc-status{flex-shrink:0}
-.status-badge{
-  font-size:.7rem;font-weight:700;
-  padding:3px 9px;border-radius:20px;
-  white-space:nowrap;
-}
-.status-pending {background:#eee;color:#777}
+.status-badge{font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.status-pending{background:#eee;color:#777}
 .status-processing{background:#fff3cd;color:#856404}
-.status-ok       {background:#d4edda;color:#155724}
-.status-review   {background:#fff3cd;color:#7d5a00}
-.status-error    {background:#f8d7da;color:#721c24}
-.form-card .del-btn{
-  background:none;border:none;
-  color:var(--tl);font-size:.95rem;
-  cursor:pointer;padding:4px;
-  border-radius:4px;transition:.15s;flex-shrink:0;
-}
-.form-card .del-btn:hover{color:var(--er);background:#fff0f0}
+.status-ok{background:#d4edda;color:#155724}
+.status-review{background:#fff3cd;color:#7d5a00}
+.status-error{background:#f8d7da;color:#721c24}
+.del-btn{background:none;border:none;color:var(--tl);font-size:.95rem;cursor:pointer;padding:4px;border-radius:4px;transition:.15s;flex-shrink:0}
+.del-btn:hover{color:var(--er);background:#fff0f0}
 
-/* ── Right panel (editor) ────────────────────── */
-#editor-panel .card-body{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  align-items:start;
-}
-#editor-empty{
-  grid-column:1/-1;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  height:100%;min-height:280px;
-  color:var(--tl);gap:12px;
-}
-#editor-empty .empty-icon{font-size:3rem}
-#editor-img{
-  width:100%;
-  border-radius:var(--r2);
-  border:2px solid var(--lg);
-  object-fit:contain;
-  max-height:calc(100vh - 320px);
-}
-#editor-right{display:flex;flex-direction:column;gap:12px}
-#editor-title{font-size:.95rem;font-weight:700;color:var(--dg)}
-#review-badge{display:none}
-#editor-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-}
+/* Editor */
+.editor-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.editor-img{width:100%;border-radius:var(--r2);border:2px solid var(--lg);object-fit:contain;max-height:60vh}
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .q-item{display:flex;flex-direction:column;gap:3px}
 .q-item label{font-size:.72rem;font-weight:600;color:var(--tm)}
-.q-item input{
-  border:1.5px solid var(--lg);
-  border-radius:6px;
-  padding:5px 8px;
-  font-size:.84rem;
-  font-family:'Inter',sans-serif;
-  color:var(--tx);
-  transition:.2s;
-  width:100%;
-}
+.q-item input{border:1.5px solid var(--lg);border-radius:6px;padding:5px 8px;font-size:.84rem;font-family:'Inter',sans-serif;color:var(--tx);transition:.2s;width:100%}
 .q-item input:focus{outline:none;border-color:var(--ag);box-shadow:0 0 0 3px rgba(76,175,112,.15)}
 .q-item input.is-bad{border-color:var(--wa);background:#fff8f0}
-#save-edits-btn{
-  background:var(--mg);color:var(--wh);
-  border:none;border-radius:var(--r2);
-  padding:10px;font-size:.88rem;font-weight:700;
-  cursor:pointer;transition:.2s;width:100%;
-}
-#save-edits-btn:hover{background:var(--dg)}
 
-/* ── Bottom toolbar ──────────────────────────── */
-footer{
-  height:72px;
-  background:var(--wh);
-  border-top:1.5px solid var(--pg);
-  box-shadow:0 -2px 10px var(--sh);
-  display:flex;align-items:center;gap:16px;
-  padding:0 24px;
-  flex-shrink:0;
-}
-#start-btn{
-  display:flex;align-items:center;gap:8px;
-  background:linear-gradient(135deg,var(--mg),var(--dg));
-  color:var(--wh);border:none;
-  border-radius:var(--r2);
-  padding:11px 24px;font-size:.92rem;font-weight:700;
-  cursor:pointer;transition:.2s;
-  box-shadow:0 4px 12px rgba(46,125,82,.35);
-}
-#start-btn:hover{box-shadow:0 6px 18px rgba(46,125,82,.5);transform:translateY(-1px)}
-#start-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+/* Report viewer */
+.report-viewer{max-height:60vh;overflow-y:auto;padding:16px;background:var(--vg);border-radius:var(--r2);border:1px solid var(--lg);font-size:.88rem;line-height:1.7}
+.report-viewer h1,.report-viewer h2,.report-viewer h3{color:var(--dg);margin-top:16px}
+.report-viewer table{border-collapse:collapse;width:100%;margin:8px 0}
+.report-viewer th,.report-viewer td{border:1px solid var(--lg);padding:6px 10px;text-align:left;font-size:.82rem}
+.report-viewer th{background:var(--pg);font-weight:600}
+
+/* Progress */
+.progress-bar-bg{height:8px;border-radius:8px;background:var(--pg);overflow:hidden;margin:8px 0}
+.progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--ag),var(--dg));border-radius:8px;transition:width .4s ease}
+
+/* Footer */
+footer{height:72px;background:var(--wh);border-top:1.5px solid var(--pg);box-shadow:0 -2px 10px var(--sh);display:flex;align-items:center;gap:16px;padding:0 24px;flex-shrink:0}
 .progress-wrap{flex:1;display:flex;flex-direction:column;gap:4px}
 #progress-label{font-size:.8rem;color:var(--tm);font-weight:500}
-#progress-bar-bg{
-  height:8px;border-radius:8px;
-  background:var(--pg);overflow:hidden;
-}
-#progress-bar{
-  height:100%;width:0%;
-  background:linear-gradient(90deg,var(--ag),var(--dg));
-  border-radius:8px;
-  transition:width .4s ease;
-}
 #status-text{font-size:.75rem;color:var(--tl)}
 
-/* ── Notification toast ──────────────────────── */
-#toast{
-  position:fixed;bottom:90px;right:24px;
-  background:var(--dg);color:var(--wh);
-  border-radius:var(--r2);padding:10px 18px;
-  font-size:.84rem;font-weight:500;
-  box-shadow:0 4px 16px var(--sh);
-  transform:translateY(20px);opacity:0;
-  transition:.3s;pointer-events:none;z-index:999;
-}
+/* Toast */
+#toast{position:fixed;bottom:90px;right:24px;background:var(--dg);color:var(--wh);border-radius:var(--r2);padding:10px 18px;font-size:.84rem;font-weight:500;box-shadow:0 4px 16px var(--sh);transform:translateY(20px);opacity:0;transition:.3s;pointer-events:none;z-index:999}
 #toast.show{transform:translateY(0);opacity:1}
 
-/* ── Scrollbar ───────────────────────────────── */
+/* Spinner */
+.spinner{display:inline-block;width:20px;height:20px;border:3px solid var(--lg);border-top-color:var(--ag);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Scrollbar */
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--lg);border-radius:4px}
+
+/* Log area */
+.log-area{max-height:200px;overflow-y:auto;background:#f8f8f8;border-radius:var(--r2);padding:10px;font-family:monospace;font-size:.78rem;color:var(--tm);border:1px solid var(--pg)}
 </style>
 </head>
 <body>
 
-<!-- ── Header ─────────────────────────────────────── -->
+<!-- Header -->
 <header>
   <div class="logo">🌿</div>
   <div>
     <h1>NIRMAN Data Automation</h1>
-    <div class="sub">Automated Workshop Feedback Extractor</div>
+    <div class="sub">Dynamic Form Extraction & Analysis Platform</div>
   </div>
   <div class="spacer"></div>
-  <button id="excel-btn" onclick="openExcel()" disabled>
-    📊 View Excel
-  </button>
+  <button class="hdr-btn" id="excel-btn" onclick="openExcel()" disabled>📊 Excel</button>
+  <button class="hdr-btn" id="report-btn" onclick="switchStep(5)" disabled>📋 Report</button>
 </header>
 
-<!-- ── Main ───────────────────────────────────────── -->
+<!-- Stepper -->
+<div id="stepper">
+  <div class="step-tab active" data-step="1" onclick="switchStep(1)">
+    <span class="step-num">1</span>Sample Analysis
+  </div>
+  <div class="step-tab disabled" data-step="2" onclick="switchStep(2)">
+    <span class="step-num">2</span>Schema Review
+  </div>
+  <div class="step-tab disabled" data-step="3" onclick="switchStep(3)">
+    <span class="step-num">3</span>Upload Batch
+  </div>
+  <div class="step-tab disabled" data-step="4" onclick="switchStep(4)">
+    <span class="step-num">4</span>Process & Review
+  </div>
+  <div class="step-tab disabled" data-step="5" onclick="switchStep(5)">
+    <span class="step-num">5</span>Report
+  </div>
+</div>
+
+<!-- Main Content -->
 <main>
 
-  <!-- Left: Upload + Forms list -->
+<!-- Step 1: Sample Analysis -->
+<div class="step-panel visible" id="step-1">
   <div class="card">
     <div class="card-header">
-      <span>📋</span>
-      <h2>Add the About Self Forms</h2>
+      <span>🔍</span><h2>Step 1: Analyze a Sample Form</h2>
+    </div>
+    <div class="card-body">
+      <p style="margin-bottom:12px;color:var(--tm);font-size:.88rem">
+        Upload <strong>one sample form</strong> to teach the system its structure.
+        The AI will identify all fields, their types, and constraints.
+      </p>
+      <div class="drop-zone" id="sample-drop" onclick="document.getElementById('sample-input').click()">
+        <div class="drop-icon">📄</div>
+        <p>Drag & drop a <strong>sample form image</strong> here<br/>or click to browse</p>
+        <p style="margin-top:6px;font-size:.76rem;color:var(--tl)">JPG, PNG, TIFF, BMP, WEBP</p>
+        <button class="btn btn-primary" style="margin-top:10px" onclick="event.stopPropagation();document.getElementById('sample-input').click()">Browse File</button>
+      </div>
+      <input type="file" class="file-input" id="sample-input" accept=".jpg,.jpeg,.png,.bmp,.tiff,.webp" onchange="analyzeSample(this.files[0])"/>
+      <div id="sample-status" style="display:none;margin-top:12px;text-align:center"></div>
+
+      <div style="margin-top:16px;border-top:1px solid var(--pg);padding-top:12px">
+        <p style="font-size:.82rem;color:var(--tl);margin-bottom:8px">Or load a previously saved schema:</p>
+        <div id="saved-schemas"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 2: Schema Review -->
+<div class="step-panel" id="step-2">
+  <div class="card">
+    <div class="card-header">
+      <span>✏️</span><h2>Step 2: Review & Edit Schema</h2>
+      <span class="badge" id="field-count-badge">0 fields</span>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:12px;margin-bottom:12px">
+        <div style="flex:1">
+          <label style="font-size:.72rem;font-weight:600;color:var(--tm)">Form Name</label>
+          <input id="schema-name" type="text" style="width:100%;border:1.5px solid var(--lg);border-radius:6px;padding:6px 10px;font-size:.88rem" />
+        </div>
+        <div style="flex:2">
+          <label style="font-size:.72rem;font-weight:600;color:var(--tm)">Description</label>
+          <input id="schema-desc" type="text" style="width:100%;border:1.5px solid var(--lg);border-radius:6px;padding:6px 10px;font-size:.88rem" />
+        </div>
+      </div>
+
+      <div class="schema-header schema-field">
+        <span>Field Name</span><span>Label</span><span>Type</span>
+        <span>Min</span><span>Max</span><span>Required</span>
+      </div>
+      <div id="schema-fields"></div>
+
+      <div style="display:flex;gap:10px;margin-top:14px">
+        <button class="btn btn-primary" onclick="confirmSchema()">✓ Confirm Schema & Continue</button>
+        <button class="btn btn-secondary" onclick="addField()">+ Add Field</button>
+        <button class="btn btn-secondary" onclick="saveSchemaEdits()">💾 Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 3: Upload Batch -->
+<div class="step-panel" id="step-3">
+  <div class="card">
+    <div class="card-header">
+      <span>📂</span><h2>Step 3: Upload Form Batch</h2>
       <span class="badge" id="count-badge">0</span>
     </div>
     <div class="card-body">
-
-      <!-- Drop zone -->
-      <div id="drop-zone" onclick="document.getElementById('file-input').click()">
+      <div class="drop-zone" id="batch-drop" onclick="document.getElementById('batch-input').click()">
         <div class="drop-icon">📂</div>
-        <p>Drag &amp; drop form images here<br/>
-           or click to browse files</p>
-        <p style="margin-top:6px;font-size:.76rem;color:var(--tl)">
-          Supports JPG, PNG, TIFF, BMP, WEBP
-        </p>
-        <button id="browse-btn" onclick="event.stopPropagation();document.getElementById('file-input').click()">
-          Browse Files
-        </button>
+        <p>Drag & drop form images here<br/>or click to browse files</p>
+        <p style="margin-top:6px;font-size:.76rem;color:var(--tl)">Supports JPG, PNG, TIFF, BMP, WEBP — multiple files at once</p>
+        <button class="btn btn-primary" style="margin-top:10px" onclick="event.stopPropagation();document.getElementById('batch-input').click()">Browse Files</button>
       </div>
-      <input type="file" id="file-input" multiple
-             accept=".jpg,.jpeg,.png,.bmp,.tiff,.webp"
-             onchange="uploadFiles(this.files)"/>
+      <input type="file" class="file-input" id="batch-input" multiple accept=".jpg,.jpeg,.png,.bmp,.tiff,.webp" onchange="uploadBatch(this.files)"/>
+      <div id="batch-forms-grid"></div>
 
-      <!-- Forms list -->
-      <div id="forms-grid"></div>
+      <div style="margin-top:14px">
+        <button class="btn btn-primary" id="start-btn" onclick="startExtraction()">▶ Start Extraction</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 4: Process & Review -->
+<div class="step-panel" id="step-4">
+  <div style="display:grid;grid-template-columns:380px 1fr;gap:20px">
+    <!-- Left: Forms list -->
+    <div class="card">
+      <div class="card-header">
+        <span>📋</span><h2>Processed Forms</h2>
+        <span class="badge" id="processed-badge">0</span>
+      </div>
+      <div class="card-body" style="max-height:calc(100vh - 320px);overflow-y:auto">
+        <div id="review-forms-grid"></div>
+      </div>
+    </div>
+    <!-- Right: Editor -->
+    <div class="card">
+      <div class="card-header">
+        <span>✏️</span><h2>Form Viewer & Editor</h2>
+        <span class="badge" id="review-badge" style="display:none;background:var(--wa)">Needs Review</span>
+      </div>
+      <div class="card-body" id="editor-body">
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;color:var(--tl);gap:12px">
+          <div style="font-size:3rem">👆</div>
+          <p>Select a form to view and edit its extracted values.</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Right: Form viewer / editor -->
-  <div class="card" id="editor-panel">
+  <!-- Progress / Log -->
+  <div class="card" style="margin-top:20px">
+    <div class="card-header"><span>📊</span><h2>Processing Log</h2></div>
+    <div class="card-body">
+      <div id="progress-label" style="font-size:.84rem;font-weight:600;color:var(--dg)">Ready</div>
+      <div class="progress-bar-bg"><div class="progress-bar" id="progress-bar"></div></div>
+      <div id="status-text" style="font-size:.78rem;color:var(--tl);margin-bottom:8px"></div>
+      <div class="log-area" id="log-area"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 5: Report -->
+<div class="step-panel" id="step-5">
+  <div class="card">
     <div class="card-header">
-      <span>✏️</span>
-      <h2>Form Viewer &amp; Editor</h2>
-      <span class="badge" id="review-badge" style="display:none;background:var(--wa)">Needs Review</span>
+      <span>📋</span><h2>Step 5: Analytical Report</h2>
     </div>
-    <div class="card-body" id="editor-body">
-      <div id="editor-empty">
-        <div class="empty-icon">👆</div>
-        <p>Select a form on the left to view and edit its extracted values.</p>
+    <div class="card-body">
+      <p style="margin-bottom:12px;color:var(--tm);font-size:.88rem">
+        Generate a plain-language analytical report based on the extracted and validated data.
+        The report uses the <strong>same data</strong> as the Excel output.
+      </p>
+      <div style="display:flex;gap:10px;margin-bottom:14px">
+        <button class="btn btn-primary" id="gen-report-btn" onclick="generateReport()">📊 Generate Report</button>
+        <button class="btn btn-secondary" id="dl-report-btn" onclick="downloadReport()" disabled>⬇ Download .md</button>
       </div>
+      <div id="report-loading" style="display:none;text-align:center;padding:20px">
+        <div class="spinner"></div>
+        <p style="margin-top:8px;color:var(--tl)">Generating report...</p>
+      </div>
+      <div class="report-viewer" id="report-viewer" style="display:none"></div>
     </div>
   </div>
+</div>
 
 </main>
 
-<!-- ── Footer toolbar ─────────────────────────────── -->
+<!-- Footer -->
 <footer>
-  <button id="start-btn" onclick="startExtraction()">
-    ▶&nbsp; Start Automation
-  </button>
   <div class="progress-wrap">
-    <div id="progress-label">Ready</div>
-    <div id="progress-bar-bg"><div id="progress-bar"></div></div>
-    <div id="status-text">Upload forms and click Start Automation to begin.</div>
+    <div id="footer-label" style="font-size:.8rem;color:var(--tm);font-weight:500">Ready</div>
+    <div id="footer-status" style="font-size:.75rem;color:var(--tl)">Upload a sample form to begin.</div>
   </div>
 </footer>
 
 <div id="toast"></div>
 
 <script>
-/* ── State ──────────────────────────────────────────── */
-let allForms      = [];
-let activeForm    = null;
-let pollTimer     = null;
-let softRefreshTimer = null;   // Bug 3 fix: pausable soft-refresh
-const SENTINELS = new Set(["ILLEGIBLE","OUT_OF_RANGE","FIELD_MISSING","API_ERROR","PARSE_ERROR"]);
+/* ── State ─────────────────────────────── */
+let currentStep = 1;
+let schema = null;
+let schemaConfirmed = false;
+let allForms = [];
+let activeForm = null;
+let pollTimer = null;
+const SENTINELS = new Set(["ILLEGIBLE","OUT_OF_RANGE","FIELD_MISSING","API_ERROR","PARSE_ERROR","INVALID_VALUE"]);
 
-function startSoftRefresh()  { if (!softRefreshTimer) softRefreshTimer = setInterval(refreshForms, 8000); }
-function pauseSoftRefresh()  { clearInterval(softRefreshTimer); softRefreshTimer = null; }
+/* ── Stepper ──────────────────────────── */
+function switchStep(n) {
+  const tab = document.querySelector(`.step-tab[data-step="${n}"]`);
+  if (tab && tab.classList.contains('disabled')) return;
+  currentStep = n;
+  document.querySelectorAll('.step-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('visible'));
+  if (tab) tab.classList.add('active');
+  const panel = document.getElementById(`step-${n}`);
+  if (panel) panel.classList.add('visible');
+  if (n === 4) refreshForms();
+}
 
-/* ── Drag & Drop ─────────────────────────────────────── */
-const dz = document.getElementById("drop-zone");
-["dragenter","dragover"].forEach(e =>
-  dz.addEventListener(e, ev => { ev.preventDefault(); dz.classList.add("drag-over"); }));
-["dragleave","drop"].forEach(e =>
-  dz.addEventListener(e, ev => { ev.preventDefault(); dz.classList.remove("drag-over"); }));
-dz.addEventListener("drop", ev => uploadFiles(ev.dataTransfer.files));
+function enableStep(n) {
+  const tab = document.querySelector(`.step-tab[data-step="${n}"]`);
+  if (tab) tab.classList.remove('disabled');
+}
 
-/* ── Upload ──────────────────────────────────────────── */
-async function uploadFiles(files) {
+function markStepDone(n) {
+  const tab = document.querySelector(`.step-tab[data-step="${n}"]`);
+  if (tab) tab.classList.add('done');
+}
+
+/* ── Drag & Drop (sample) ─────────────── */
+const sd = document.getElementById('sample-drop');
+['dragenter','dragover'].forEach(e => sd.addEventListener(e, ev => { ev.preventDefault(); sd.classList.add('drag-over'); }));
+['dragleave','drop'].forEach(e => sd.addEventListener(e, ev => { ev.preventDefault(); sd.classList.remove('drag-over'); }));
+sd.addEventListener('drop', ev => analyzeSample(ev.dataTransfer.files[0]));
+
+/* ── Drag & Drop (batch) ──────────────── */
+const bd = document.getElementById('batch-drop');
+['dragenter','dragover'].forEach(e => bd.addEventListener(e, ev => { ev.preventDefault(); bd.classList.add('drag-over'); }));
+['dragleave','drop'].forEach(e => bd.addEventListener(e, ev => { ev.preventDefault(); bd.classList.remove('drag-over'); }));
+bd.addEventListener('drop', ev => uploadBatch(ev.dataTransfer.files));
+
+/* ── Step 1: Analyze Sample ───────────── */
+async function analyzeSample(file) {
+  if (!file) return;
+  const ss = document.getElementById('sample-status');
+  ss.style.display = 'block';
+  ss.innerHTML = '<div class="spinner"></div><p style="margin-top:8px;color:var(--tl)">Analyzing form structure... this may take 15-30 seconds</p>';
+
+  const fd = new FormData();
+  fd.append('sample', file);
+
+  try {
+    const r = await fetch('/api/analyze-sample', { method: 'POST', body: fd });
+    const d = await r.json();
+    if (d.error) {
+      ss.innerHTML = `<p style="color:var(--er)">❌ ${d.error}</p>`;
+      toast(d.error, true);
+      return;
+    }
+    schema = d.schema;
+    ss.innerHTML = '<p style="color:var(--ok)">✅ Schema generated successfully!</p>';
+    toast('✅ Schema generated!');
+    renderSchema();
+    markStepDone(1);
+    enableStep(2);
+    switchStep(2);
+  } catch(e) {
+    ss.innerHTML = `<p style="color:var(--er)">❌ Error: ${e.message}</p>`;
+    toast('Analysis failed', true);
+  }
+}
+
+async function loadSavedSchemas() {
+  try {
+    const r = await fetch('/api/schemas');
+    const list = await r.json();
+    const el = document.getElementById('saved-schemas');
+    if (!list.length) {
+      el.innerHTML = '<p style="color:var(--tl);font-size:.82rem">No saved schemas found.</p>';
+      return;
+    }
+    el.innerHTML = list.map(s => `
+      <div class="form-card" onclick="loadSchema('${s.schema_id}')">
+        <div class="fc-info">
+          <div class="fc-name">${s.name}</div>
+          <div class="fc-size">${s.field_count} fields · Created ${s.created_at}</div>
+        </div>
+        <span class="status-badge status-ok">Load</span>
+      </div>
+    `).join('');
+  } catch(e) { /* ignore */ }
+}
+
+async function loadSchema(id) {
+  const r = await fetch(`/api/schema/load/${id}`, { method: 'POST' });
+  const d = await r.json();
+  if (d.ok) {
+    schema = d.schema;
+    renderSchema();
+    markStepDone(1);
+    enableStep(2);
+    switchStep(2);
+    toast('✅ Schema loaded');
+  } else {
+    toast(d.error || 'Failed to load schema', true);
+  }
+}
+
+/* ── Step 2: Schema Editor ────────────── */
+function renderSchema() {
+  if (!schema) return;
+  document.getElementById('schema-name').value = schema.name || '';
+  document.getElementById('schema-desc').value = schema.description || '';
+  document.getElementById('field-count-badge').textContent = `${schema.fields.length} fields`;
+
+  const container = document.getElementById('schema-fields');
+  container.innerHTML = schema.fields.map((f, i) => `
+    <div class="schema-field" data-idx="${i}">
+      <input type="text" value="${f.name || ''}" data-key="name" placeholder="field_name"/>
+      <input type="text" value="${f.label || ''}" data-key="label" placeholder="Label"/>
+      <select data-key="field_type">
+        ${['rating','numeric','text','categorical','checkbox','date','other'].map(t =>
+          `<option value="${t}" ${f.field_type===t?'selected':''}>${t}</option>`
+        ).join('')}
+      </select>
+      <input type="number" value="${f.min_value ?? ''}" data-key="min_value" placeholder="Min"/>
+      <input type="number" value="${f.max_value ?? ''}" data-key="max_value" placeholder="Max"/>
+      <div style="display:flex;align-items:center;gap:6px">
+        <input type="checkbox" ${f.required?'checked':''} data-key="required"/>
+        <button class="del-btn" title="Remove" onclick="removeField(${i})">🗑</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function addField() {
+  if (!schema) return;
+  schema.fields.push({
+    name: `field_${schema.fields.length+1}`,
+    label: `Field ${schema.fields.length+1}`,
+    field_type: 'text',
+    required: true,
+    min_value: null,
+    max_value: null,
+  });
+  renderSchema();
+}
+
+function removeField(idx) {
+  if (!schema) return;
+  schema.fields.splice(idx, 1);
+  renderSchema();
+}
+
+function collectSchemaEdits() {
+  const fields = [];
+  document.querySelectorAll('#schema-fields .schema-field').forEach(row => {
+    const f = {};
+    row.querySelectorAll('input, select').forEach(el => {
+      const key = el.dataset.key;
+      if (key === 'required') f[key] = el.checked;
+      else if (key === 'min_value' || key === 'max_value') f[key] = el.value ? parseFloat(el.value) : null;
+      else f[key] = el.value;
+    });
+    fields.push(f);
+  });
+  return {
+    name: document.getElementById('schema-name').value,
+    description: document.getElementById('schema-desc').value,
+    fields: fields,
+  };
+}
+
+async function saveSchemaEdits() {
+  const edits = collectSchemaEdits();
+  const r = await fetch('/api/schema', {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(edits),
+  });
+  const d = await r.json();
+  if (d.ok) {
+    schema = d.schema;
+    renderSchema();
+    toast('✅ Schema saved');
+  } else {
+    toast(d.error || 'Save failed', true);
+  }
+}
+
+async function confirmSchema() {
+  // Save first
+  await saveSchemaEdits();
+  const r = await fetch('/api/schema/confirm', { method: 'POST' });
+  const d = await r.json();
+  if (d.ok) {
+    schemaConfirmed = true;
+    markStepDone(2);
+    enableStep(3);
+    enableStep(4);
+    switchStep(3);
+    toast('✅ Schema confirmed! Upload your forms.');
+  } else {
+    toast(d.error || 'Failed to confirm', true);
+  }
+}
+
+/* ── Step 3: Upload Batch ─────────────── */
+async function uploadBatch(files) {
   if (!files || !files.length) return;
   const fd = new FormData();
-  [...files].forEach(f => fd.append("files", f));
-  const r = await fetch("/api/upload", { method:"POST", body:fd });
+  [...files].forEach(f => fd.append('files', f));
+  const r = await fetch('/api/upload', { method: 'POST', body: fd });
   const d = await r.json();
   if (d.saved?.length) toast(`✅ ${d.saved.length} form(s) added`);
-  if (d.errors?.length) toast(`⚠ ${d.errors.join(", ")}`, true);
+  if (d.errors?.length) toast(`⚠ ${d.errors.join(', ')}`, true);
   refreshForms();
 }
 
-/* ── Forms list ──────────────────────────────────────── */
+/* ── Forms list ───────────────────────── */
 async function refreshForms() {
-  const r  = await fetch("/api/forms");
+  const r = await fetch('/api/forms');
   allForms = await r.json();
-  document.getElementById("count-badge").textContent = allForms.length;
-  renderGrid();
-  // Update excel button
-  const hasDone = allForms.some(f => f.result);
-  document.getElementById("excel-btn").disabled = !hasDone;
+  document.getElementById('count-badge').textContent = allForms.length;
+  document.getElementById('processed-badge').textContent = allForms.filter(f => f.result && f.result !== '__processing__').length;
+  renderBatchGrid();
+  renderReviewGrid();
+
+  const hasDone = allForms.some(f => f.result && f.result !== '__processing__');
+  document.getElementById('excel-btn').disabled = !hasDone;
 }
 
-function renderGrid() {
-  const grid = document.getElementById("forms-grid");
-  grid.innerHTML = "";
+function statusInfo(f) {
+  if (!f.result) return {cls:'status-pending', label:'Pending'};
+  if (f.result === '__processing__') return {cls:'status-processing', label:'Processing…'};
+  if (f.result.review_required) return {cls:'status-review', label:'⚠ Review'};
+  if (f.result.status === 'failed') return {cls:'status-error', label:'✗ Error'};
+  return {cls:'status-ok', label:'✓ Clean'};
+}
+
+function renderBatchGrid() {
+  const grid = document.getElementById('batch-forms-grid');
   if (!allForms.length) {
-    grid.innerHTML = `<p style="text-align:center;color:var(--tl);font-size:.84rem;padding:20px 0">No forms added yet.</p>`;
+    grid.innerHTML = '<p style="text-align:center;color:var(--tl);font-size:.84rem;padding:20px 0">No forms added yet.</p>';
     return;
   }
-  allForms.forEach(f => {
-    const isActive = activeForm === f.name;
-    const div = document.createElement("div");
-    div.className = "form-card" + (isActive ? " active" : "");
-    div.onclick   = () => openEditor(f.name);
+  grid.innerHTML = allForms.map(f => {
     const kb = (f.size / 1024).toFixed(0);
     const {cls, label} = statusInfo(f);
-    div.innerHTML = `
+    return `<div class="form-card">
       <img class="thumb" src="/api/form-image/${encodeURIComponent(f.name)}" alt="${f.name}"/>
       <div class="fc-info">
         <div class="fc-name" title="${f.name}">${f.name}</div>
         <div class="fc-size">${kb} KB</div>
       </div>
-      <div class="fc-status"><span class="status-badge ${cls}">${label}</span></div>
-      <button class="del-btn" title="Remove" onclick="event.stopPropagation();deleteForm('${f.name}')">🗑</button>`;
-    grid.appendChild(div);
-  });
+      <span class="status-badge ${cls}">${label}</span>
+      <button class="del-btn" title="Remove" onclick="deleteForm('${f.name}')">🗑</button>
+    </div>`;
+  }).join('');
 }
 
-function statusInfo(f) {
-  if (!f.result) return {cls:"status-pending", label:"Pending"};
-  if (f.result === "__processing__") return {cls:"status-processing", label:"Processing…"};
-  if (f.result.Review_Required || f.result["Review Required"])
-    return {cls:"status-review", label:"⚠ Review"};
-  return {cls:"status-ok", label:"✓ Clean"};
-}
-
-/* ── Delete form ─────────────────────────────────────── */
-async function deleteForm(name) {
-  if (!confirm(`Remove "${name}" from the list?`)) return;
-  await fetch(`/api/delete/${encodeURIComponent(name)}`, {method:"DELETE"});
-  if (activeForm === name) {
-    activeForm = null;
-    resetEditor();
+function renderReviewGrid() {
+  const grid = document.getElementById('review-forms-grid');
+  const processed = allForms.filter(f => f.result && f.result !== '__processing__');
+  if (!processed.length) {
+    grid.innerHTML = '<p style="text-align:center;color:var(--tl);font-size:.84rem;padding:20px 0">No processed forms yet.</p>';
+    return;
   }
+  grid.innerHTML = processed.map(f => {
+    const isActive = activeForm === f.name;
+    const {cls, label} = statusInfo(f);
+    return `<div class="form-card ${isActive?'active':''}" onclick="openEditor('${f.name}')">
+      <img class="thumb" src="/api/form-image/${encodeURIComponent(f.name)}" alt="${f.name}"/>
+      <div class="fc-info">
+        <div class="fc-name" title="${f.name}">${f.name}</div>
+      </div>
+      <span class="status-badge ${cls}">${label}</span>
+    </div>`;
+  }).join('');
+}
+
+async function deleteForm(name) {
+  if (!confirm(`Remove "${name}"?`)) return;
+  await fetch(`/api/delete/${encodeURIComponent(name)}`, {method:'DELETE'});
+  if (activeForm === name) { activeForm = null; resetEditor(); }
   refreshForms();
 }
 
-/* ── Editor ──────────────────────────────────────────── */
+/* ── Editor ───────────────────────────── */
 function openEditor(name) {
   activeForm = name;
-  renderGrid();
+  renderReviewGrid();
   const form = allForms.find(f => f.name === name);
-  if (!form) return;
-
-  const body = document.getElementById("editor-body");
-  const rb   = document.getElementById("review-badge");
-
-  if (!form.result) {
-    body.innerHTML = `
-      <div id="editor-empty">
-        <img id="editor-img" src="/api/form-image/${encodeURIComponent(name)}" alt="${name}"/>
-        <div id="editor-right">
-          <div id="editor-title">${name}</div>
-          <p style="color:var(--tl);font-size:.84rem">
-            This form has not been processed yet. Run extraction first.
-          </p>
-        </div>
-      </div>`;
-    rb.style.display = "none";
-    return;
-  }
+  if (!form || !form.result || form.result === '__processing__') return;
 
   const rec = form.result;
-  const needsReview = rec["Review Required"] || rec["Review_Required"];
-  rb.style.display = needsReview ? "inline-block" : "none";
+  const needsReview = rec.review_required;
+  const rb = document.getElementById('review-badge');
+  rb.style.display = needsReview ? 'inline-block' : 'none';
 
-  // Build Q items
-  const qs = Array.from({length:30}, (_,i) => `Q${i+1}`);
-  const qHtml = qs.map(q => {
-    const val = rec[q] ?? "";
-    const isBad = SENTINELS.has(String(val).toUpperCase());
+  // Get field names from schema or from the record
+  const fields = schema ? schema.fields : [];
+  const qHtml = fields.map(f => {
+    const fv = rec.fields ? rec.fields[f.name] : null;
+    const val = fv ? (fv.validated_value ?? '') : '';
+    const isBad = typeof val === 'string' && SENTINELS.has(val.toUpperCase());
     return `<div class="q-item">
-      <label>${q}</label>
-      <input id="inp-${q}" type="text" value="${val}" class="${isBad ? 'is-bad':''}"
+      <label>${f.label || f.name}</label>
+      <input id="inp-${f.name}" type="text" value="${val}" class="${isBad?'is-bad':''}" data-field="${f.name}"
              oninput="markDirty(this)"/>
     </div>`;
-  }).join("");
+  }).join('');
 
-  body.innerHTML = `
-    <img id="editor-img" src="/api/form-image/${encodeURIComponent(name)}" alt="${name}"/>
-    <div id="editor-right">
-      <div id="editor-title">📄 ${name}</div>
-      <div style="font-size:.78rem;color:var(--tl)">
-        Processed: ${rec["Processed At"] || "—"}
+  document.getElementById('editor-body').innerHTML = `
+    <div class="editor-layout">
+      <img class="editor-img" src="/api/form-image/${encodeURIComponent(name)}" alt="${name}"/>
+      <div>
+        <div style="font-size:.95rem;font-weight:700;color:var(--dg);margin-bottom:4px">📄 ${name}</div>
+        <div style="font-size:.78rem;color:var(--tl);margin-bottom:8px">
+          Processed: ${rec.processed_at || '—'} · Status: ${rec.status || '—'}
+        </div>
+        ${needsReview ? `<div class="status-badge status-review" style="width:fit-content;margin-bottom:8px">⚠ ${rec.review_notes || 'Needs review'}</div>` : ''}
+        <div class="editor-grid">${qHtml}</div>
+        <button class="btn btn-primary" style="margin-top:12px;width:100%" onclick="saveEdits()">💾 Save Edits & Update Excel</button>
       </div>
-      ${needsReview ? `<div class="status-badge status-review" style="width:fit-content">⚠ ${rec["Review Notes"] || "Needs manual review"}</div>` : ''}
-      <div id="editor-grid">${qHtml}</div>
-      <button id="save-edits-btn" onclick="saveEdits()">💾&nbsp; Save Edits &amp; Update Excel</button>
     </div>`;
 }
 
 function markDirty(inp) {
   const v = inp.value.trim().toUpperCase();
-  inp.classList.toggle("is-bad", SENTINELS.has(v));
+  inp.classList.toggle('is-bad', SENTINELS.has(v));
 }
 
 function resetEditor() {
-  document.getElementById("editor-body").innerHTML = `
-    <div id="editor-empty">
-      <div class="empty-icon">👆</div>
-      <p>Select a form on the left to view and edit its extracted values.</p>
+  document.getElementById('editor-body').innerHTML = `
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;color:var(--tl);gap:12px">
+      <div style="font-size:3rem">👆</div>
+      <p>Select a form to view and edit its extracted values.</p>
     </div>`;
-  document.getElementById("review-badge").style.display = "none";
+  document.getElementById('review-badge').style.display = 'none';
 }
 
 async function saveEdits() {
-  if (!activeForm) return;
+  if (!activeForm || !schema) return;
   const edits = {};
-  for (let i=1;i<=30;i++) {
-    const inp = document.getElementById(`inp-Q${i}`);
-    if (!inp) continue;
+  schema.fields.forEach(f => {
+    const inp = document.getElementById(`inp-${f.name}`);
+    if (!inp) return;
     const v = inp.value.trim();
     const num = parseFloat(v);
-    edits[`Q${i}`] = (!isNaN(num) && v !== "") ? num : v.toUpperCase();
-  }
-  const r = await fetch("/api/save-edit", {
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({filename:activeForm, edits})
+    edits[f.name] = (!isNaN(num) && v !== '') ? num : v.toUpperCase();
+  });
+  const r = await fetch('/api/save-edit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({filename: activeForm, edits}),
   });
   const d = await r.json();
   if (d.ok) {
-    toast("✅ Edits saved and Excel updated!");
-    // Update local result
+    toast('✅ Edits saved and Excel updated!');
     const f = allForms.find(x => x.name === activeForm);
     if (f) f.result = d.record;
     openEditor(activeForm);
-    renderGrid();
-    document.getElementById("excel-btn").disabled = false;
+    renderReviewGrid();
+    document.getElementById('excel-btn').disabled = false;
   } else {
-    toast(d.error || "Save failed", true);
+    toast(d.error || 'Save failed', true);
   }
 }
 
-/* ── Start extraction ────────────────────────────────── */
+/* ── Extraction ───────────────────────── */
 async function startExtraction() {
-  const r = await fetch("/api/start", {method:"POST"});
+  const r = await fetch('/api/start', {method: 'POST'});
   const d = await r.json();
   if (d.error) { toast(d.error, true); return; }
-  document.getElementById("start-btn").disabled = true;
-  pauseSoftRefresh();   // Bug 3 fix: stop soft-refresh while polling
+  document.getElementById('start-btn').disabled = true;
+  enableStep(4);
+  switchStep(4);
   pollTimer = setInterval(pollState, 1500);
 }
 
 async function pollState() {
-  const r = await fetch("/api/state");
+  const r = await fetch('/api/state');
   const s = await r.json();
 
   const pct = s.total ? Math.round(s.idx / s.total * 100) : 0;
-  document.getElementById("progress-bar").style.width = pct + "%";
+  document.getElementById('progress-bar').style.width = pct + '%';
 
   if (s.running) {
-    document.getElementById("progress-label").textContent =
-      s.current_file ? `Processing: ${s.current_file}` : "Starting…";
-    document.getElementById("status-text").textContent =
+    document.getElementById('progress-label').textContent =
+      s.current_file ? `Processing: ${s.current_file}` : 'Starting…';
+    document.getElementById('status-text').textContent =
       `${s.idx} of ${s.total} forms processed`;
-    // Update form cards live
-    Object.entries(s.results || {}).forEach(([name, rec]) => {
+    document.getElementById('footer-label').textContent = `Processing ${s.idx}/${s.total}`;
+  }
+
+  // Update log
+  if (s.log) {
+    document.getElementById('log-area').textContent = s.log.join('\n');
+    const la = document.getElementById('log-area');
+    la.scrollTop = la.scrollHeight;
+  }
+
+  // Update form results
+  if (s.results) {
+    Object.entries(s.results).forEach(([name, rec]) => {
       const f = allForms.find(x => x.name === name);
       if (f) f.result = rec;
     });
-    renderGrid();
-    if (activeForm) {
-      const f = allForms.find(x => x.name === activeForm);
-      if (f?.result) openEditor(activeForm);
-    }
+    renderReviewGrid();
   }
 
   if (!s.running && s.done) {
     clearInterval(pollTimer);
     pollTimer = null;
-    startSoftRefresh();   // Bug 3 fix: resume soft-refresh after extraction
-    document.getElementById("start-btn").disabled = false;
-    document.getElementById("progress-bar").style.width = "100%";
+    document.getElementById('start-btn').disabled = false;
+    document.getElementById('progress-bar').style.width = '100%';
+
     if (s.error) {
-      document.getElementById("progress-label").textContent = "❌ Error";
-      document.getElementById("status-text").textContent = s.error;
+      document.getElementById('progress-label').textContent = '❌ Error';
+      document.getElementById('status-text').textContent = s.error;
+      document.getElementById('footer-label').textContent = '❌ Error';
       toast(s.error, true);
     } else {
-      document.getElementById("progress-label").textContent = "✅ Extraction complete!";
-      document.getElementById("status-text").textContent =
-        `${s.total} form(s) processed. Excel is ready.`;
-      document.getElementById("excel-btn").disabled = false;
-      toast("✅ All done! Click View Excel to open the results.");
+      document.getElementById('progress-label').textContent = '✅ Extraction complete!';
+      document.getElementById('status-text').textContent = `All forms processed. Excel is ready.`;
+      document.getElementById('footer-label').textContent = '✅ Complete';
+      document.getElementById('footer-status').textContent = 'Excel ready. Generate a report for analysis.';
+      document.getElementById('excel-btn').disabled = false;
+      enableStep(5);
+      document.getElementById('report-btn').disabled = false;
+      markStepDone(3);
+      markStepDone(4);
+      toast('✅ Extraction complete! Excel is ready.');
     }
-    // Final refresh
-    Object.entries(s.results || {}).forEach(([name, rec]) => {
-      const f = allForms.find(x => x.name === name);
-      if (f) f.result = rec;
-    });
-    renderGrid();
-    if (activeForm) openEditor(activeForm);
+    refreshForms();
   }
 }
 
-/* ── Open / download Excel ───────────────────────────── */
+/* ── Excel ────────────────────────────── */
 async function openExcel() {
-  // Try to open with system app first
-  const r = await fetch("/api/open-excel");
+  const r = await fetch('/api/open-excel');
   const d = await r.json();
   if (d.ok) {
-    toast("📊 Opening Excel…");
+    toast('📊 Opening Excel…');
   } else {
-    // Fallback: download
-    window.location.href = "/api/download-excel";
+    window.location.href = '/api/download-excel';
   }
 }
 
-/* ── Toast ───────────────────────────────────────────── */
-let _toastTimer = null;
-function toast(msg, isError=false) {
-  const el = document.getElementById("toast");
-  el.textContent = msg;
-  el.style.background = isError ? "var(--er)" : "var(--dg)";
-  el.classList.add("show");
-  clearTimeout(_toastTimer);
-  _toastTimer = setTimeout(() => el.classList.remove("show"), 3500);
+/* ── Report ───────────────────────────── */
+async function generateReport() {
+  const el = document.getElementById('report-loading');
+  const viewer = document.getElementById('report-viewer');
+  el.style.display = 'block';
+  viewer.style.display = 'none';
+  document.getElementById('gen-report-btn').disabled = true;
+
+  try {
+    const r = await fetch('/api/generate-report', {method: 'POST'});
+    const d = await r.json();
+    if (d.error) {
+      toast(d.error, true);
+      el.style.display = 'none';
+      return;
+    }
+    // Simple markdown rendering
+    viewer.innerHTML = simpleMarkdown(d.report);
+    viewer.style.display = 'block';
+    el.style.display = 'none';
+    document.getElementById('dl-report-btn').disabled = false;
+    toast('✅ Report generated!');
+  } catch(e) {
+    toast('Report generation failed', true);
+    el.style.display = 'none';
+  } finally {
+    document.getElementById('gen-report-btn').disabled = false;
+  }
 }
 
-/* ── Init ────────────────────────────────────────────── */
-refreshForms();
-startSoftRefresh();   // Bug 3 fix: use pausable soft-refresh
+function downloadReport() {
+  window.location.href = '/api/download-report';
+}
+
+/* Simple markdown → HTML */
+function simpleMarkdown(md) {
+  return md
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+    .replace(/\n\n/g, '<br/><br/>')
+    .replace(/\|(.+)\|/g, (m) => {
+      if (m.includes('---')) return '';
+      const cells = m.split('|').filter(c => c.trim());
+      const tag = cells[0].trim().startsWith('**') ? 'th' : 'td';
+      return '<tr>' + cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join('') + '</tr>';
+    });
+}
+
+/* ── Toast ─────────────────────────────── */
+let _toastTimer = null;
+function toast(msg, isError=false) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.background = isError ? 'var(--er)' : 'var(--dg)';
+  el.classList.add('show');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => el.classList.remove('show'), 3500);
+}
+
+/* ── Init ──────────────────────────────── */
+async function init() {
+  loadSavedSchemas();
+  // Check if there's already a schema
+  const r = await fetch('/api/schema');
+  const d = await r.json();
+  if (d.schema) {
+    schema = d.schema;
+    schemaConfirmed = d.confirmed;
+    renderSchema();
+    markStepDone(1);
+    enableStep(2);
+    if (schemaConfirmed) {
+      markStepDone(2);
+      enableStep(3);
+      enableStep(4);
+    }
+  }
+  refreshForms();
+}
+init();
 </script>
 </body>
 </html>

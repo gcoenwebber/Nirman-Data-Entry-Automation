@@ -1,1 +1,328 @@
-{}
+{
+  "sampleform.jpeg": {
+    "record_id": "d16c7808-97df-4582-8ae8-0b6bdaf1f8a5",
+    "schema_id": "9157e387-d6df-4a8c-a90d-3ef41184df23",
+    "source_file": "sampleform.jpeg",
+    "safe_filename": "sampleform.jpeg",
+    "page_identifier": "1",
+    "processed_at": "2026-10-22 12:38:22",
+    "status": "partial",
+    "review_required": true,
+    "review_notes": "Q26: Messy/corrected handwriting detected by pre-scan",
+    "fields": {
+      "participant_name": {
+        "raw_value": "Tejas Jadhao",
+        "validated_value": "Tejas Jadhao",
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "date": {
+        "raw_value": "01/11/2025",
+        "validated_value": "01/11/2025",
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "batch_no": {
+        "raw_value": "N-16 Nov",
+        "validated_value": "N-16 Nov",
+        "status": "valid",
+        "confidence": 0.98,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "age": {
+        "raw_value": 17,
+        "validated_value": 17,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "instruction_scale_1": {
+        "raw_value": "1: Strongly Disagree",
+        "validated_value": "1: Strongly Disagree",
+        "status": "valid",
+        "confidence": 1.0,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "instruction_scale_2": {
+        "raw_value": "2: Disagree",
+        "validated_value": "2: Disagree",
+        "status": "valid",
+        "confidence": 1.0,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "instruction_scale_3": {
+        "raw_value": "3: Unsure",
+        "validated_value": "3: Unsure",
+        "status": "valid",
+        "confidence": 1.0,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "instruction_scale_4": {
+        "raw_value": "4: Agree",
+        "validated_value": "4: Agree",
+        "status": "valid",
+        "confidence": 1.0,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "instruction_scale_5": {
+        "raw_value": "5: Strongly Agree",
+        "validated_value": "5: Strongly Agree",
+        "status": "valid",
+        "confidence": 1.0,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q1": {
+        "raw_value": 4,
+        "validated_value": 4,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q2": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q3": {
+        "raw_value": 2,
+        "validated_value": 2,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q4": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q5": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q6": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q7": {
+        "raw_value": 4,
+        "validated_value": 4,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q8": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q9": {
+        "raw_value": 1,
+        "validated_value": 1,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q10": {
+        "raw_value": 4,
+        "validated_value": 4,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q11": {
+        "raw_value": 4,
+        "validated_value": 4,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q12": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q13": {
+        "raw_value": 4,
+        "validated_value": 4,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q14": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q15": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q16": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q17": {
+        "raw_value": 4,
+        "validated_value": 4,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q18": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q19": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q20": {
+        "raw_value": 2,
+        "validated_value": 2,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q21": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q22": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q23": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q24": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q25": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q26": {
+        "raw_value": "ILLEGIBLE",
+        "validated_value": "ILLEGIBLE",
+        "status": "illegible",
+        "confidence": 0.0,
+        "needs_review": true,
+        "review_note": "Messy/corrected handwriting detected by pre-scan"
+      },
+      "Q27": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q28": {
+        "raw_value": 3,
+        "validated_value": 3,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q29": {
+        "raw_value": 1,
+        "validated_value": 1,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      },
+      "Q30": {
+        "raw_value": 5,
+        "validated_value": 5,
+        "status": "valid",
+        "confidence": 0.99,
+        "needs_review": false,
+        "review_note": ""
+      }
+    },
+    "error_message": ""
+  }
+}

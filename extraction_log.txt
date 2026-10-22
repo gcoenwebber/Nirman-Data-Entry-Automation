@@ -1956,3 +1956,432 @@ PermissionError: [Errno 13] Permission denied: 'C:\\VS Code\\Nirman Data Entry A
 2026-07-02 19:47:41,303  [INFO]  127.0.0.1 - - [02/Jul/2026 19:47:41] "GET /api/forms HTTP/1.1" 200 -
 2026-07-02 19:47:41,306  [INFO]  127.0.0.1 - - [02/Jul/2026 19:47:41] "DELETE /api/delete/form1.jpeg HTTP/1.1" 200 -
 2026-07-02 19:47:41,319  [INFO]  127.0.0.1 - - [02/Jul/2026 19:47:41] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 12:30:38,244  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:38] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:39,005  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:39] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:40,516  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:40] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:42,011  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:42] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:42,596  [INFO]  Processing: C:\VS Code\Nirman Data Entry Automation\forms\sampleform.jpeg
+2026-09-29 12:30:42,690  [INFO]  AFC is enabled with max remote calls: 10.
+2026-09-29 12:30:43,510  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:43] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:45,013  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:45] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:46,502  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:46] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:48,001  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:48] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:49,511  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:49] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:51,007  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:51] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:52,499  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:52] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:54,016  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:54] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:55,507  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:55] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:57,011  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:57] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:30:58,503  [INFO]  127.0.0.1 - - [29/Sep/2026 12:30:58] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:00,005  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:00] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:01,509  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:01] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:03,004  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:03] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:04,508  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:04] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:05,058  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-09-29 12:31:05,061  [WARNING]    Gemini 503 on attempt 1/4 -- retrying in 5s
+2026-09-29 12:31:06,010  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:06] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:07,513  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:07] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:09,010  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:09] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:10,063  [INFO]  AFC is enabled with max remote calls: 10.
+2026-09-29 12:31:10,512  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:10] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:12,009  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:12] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:13,512  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:13] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:15,013  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:15] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:16,513  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:16] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:18,000  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:18] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:19,515  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:19] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:20,023  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-29 12:31:20,030  [INFO]    Tokens -- input: 547, output: 11, total: 1014
+2026-09-29 12:31:20,032  [INFO]    Pre-scan flagged messy fields: ['Q26']
+2026-09-29 12:31:20,034  [INFO]  AFC is enabled with max remote calls: 10.
+2026-09-29 12:31:21,004  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:21] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:22,504  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:22] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:24,001  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:24] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:24,604  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-09-29 12:31:24,606  [WARNING]    Gemini 503 on attempt 1/4 -- retrying in 5s
+2026-09-29 12:31:25,503  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:25] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:27,005  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:27] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:29,634  [INFO]  AFC is enabled with max remote calls: 10.
+2026-09-29 12:31:29,793  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:29] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:30,008  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:30] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:31,502  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:31] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:33,008  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:33] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:34,675  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-09-29 12:31:34,677  [WARNING]    Gemini 503 on attempt 2/4 -- retrying in 10s
+2026-09-29 12:31:36,037  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:36] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:36,059  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:36] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:37,501  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:37] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:39,187  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:39] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:40,502  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:40] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:42,010  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:42] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:43,514  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:43] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:44,683  [INFO]  AFC is enabled with max remote calls: 10.
+2026-09-29 12:31:45,010  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:45] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:46,514  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:46] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:48,001  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:48] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:49,508  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:49] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:51,015  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:51] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:52,506  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:52] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:54,012  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:54] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:55,514  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:55] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:57,000  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:57] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:31:58,502  [INFO]  127.0.0.1 - - [29/Sep/2026 12:31:58] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:32:00,003  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:00] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:32:00,070  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-29 12:32:00,074  [INFO]    Tokens -- input: 1350, output: 293, total: 2097
+2026-09-29 12:32:00,075  [WARNING]    [OVERRIDE] Q26: forced to ILLEGIBLE (messy/corrected handwriting in pre-scan)
+2026-09-29 12:32:00,075  [INFO]    [DONE] Review Required: True
+2026-09-29 12:32:01,391  [INFO]  =======================================================
+2026-09-29 12:32:01,392  [INFO]    Excel saved: C:\VS Code\Nirman Data Entry Automation\workshop_ratings_output.xlsx
+2026-09-29 12:32:01,392  [INFO]    Total forms processed: 1
+2026-09-29 12:32:01,392  [INFO]    Forms needing manual review: 1
+2026-09-29 12:32:01,392  [INFO]  =======================================================
+2026-09-29 12:32:01,503  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:01] "GET /api/state HTTP/1.1" 200 -
+2026-09-29 12:32:09,527  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:09] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 12:32:17,520  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:17] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 12:32:25,523  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:25] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 12:32:33,520  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:33] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 12:32:41,526  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:41] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 12:32:41,763  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:41] "GET /api/open-excel HTTP/1.1" 200 -
+2026-09-29 12:32:50,461  [INFO]  127.0.0.1 - - [29/Sep/2026 12:32:50] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 12:33:00,670  [INFO]  127.0.0.1 - - [29/Sep/2026 12:33:00] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:05:00,957  [INFO]  127.0.0.1 - - [29/Sep/2026 13:05:00] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:05:02,340  [INFO]  127.0.0.1 - - [29/Sep/2026 13:05:02] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:05:07,819  [INFO]  127.0.0.1 - - [29/Sep/2026 13:05:07] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:05:13,910  [INFO]  127.0.0.1 - - [29/Sep/2026 13:05:13] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:11:03,566  [INFO]  127.0.0.1 - - [29/Sep/2026 13:11:03] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:11:05,963  [INFO]  127.0.0.1 - - [29/Sep/2026 13:11:05] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:11:13,954  [INFO]  127.0.0.1 - - [29/Sep/2026 13:11:13] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:11:22,026  [INFO]  127.0.0.1 - - [29/Sep/2026 13:11:22] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:11:29,975  [INFO]  127.0.0.1 - - [29/Sep/2026 13:11:29] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:11:37,925  [INFO]  127.0.0.1 - - [29/Sep/2026 13:11:37] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:11:45,917  [INFO]  127.0.0.1 - - [29/Sep/2026 13:11:45] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:11:53,917  [INFO]  127.0.0.1 - - [29/Sep/2026 13:11:53] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:12:01,913  [INFO]  127.0.0.1 - - [29/Sep/2026 13:12:01] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:12:09,929  [INFO]  127.0.0.1 - - [29/Sep/2026 13:12:09] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:12:17,920  [INFO]  127.0.0.1 - - [29/Sep/2026 13:12:17] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:12:25,907  [INFO]  127.0.0.1 - - [29/Sep/2026 13:12:25] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:12:33,922  [INFO]  127.0.0.1 - - [29/Sep/2026 13:12:33] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:12:41,918  [INFO]  127.0.0.1 - - [29/Sep/2026 13:12:41] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:12:49,908  [INFO]  127.0.0.1 - - [29/Sep/2026 13:12:49] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:12:57,921  [INFO]  127.0.0.1 - - [29/Sep/2026 13:12:57] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:13:05,911  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:05] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:13:13,915  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:13] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:13:21,909  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:21] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:13:29,905  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:29] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:13:37,907  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:37] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:13:39,186  [INFO]  =======================================================
+2026-09-29 13:13:39,186  [INFO]    Excel saved: C:\VS Code\Nirman Data Entry Automation\workshop_ratings_output.xlsx
+2026-09-29 13:13:39,187  [INFO]    Total forms processed: 1
+2026-09-29 13:13:39,187  [INFO]    Forms needing manual review: 0
+2026-09-29 13:13:39,187  [INFO]  =======================================================
+2026-09-29 13:13:39,188  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:39] "POST /api/save-edit HTTP/1.1" 200 -
+2026-09-29 13:13:45,917  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:45] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:13:49,530  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:49] "GET /api/open-excel HTTP/1.1" 200 -
+2026-09-29 13:13:54,841  [INFO]  127.0.0.1 - - [29/Sep/2026 13:13:54] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:14:02,841  [INFO]  127.0.0.1 - - [29/Sep/2026 13:14:02] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:14:10,836  [INFO]  127.0.0.1 - - [29/Sep/2026 13:14:10] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:14:18,847  [INFO]  127.0.0.1 - - [29/Sep/2026 13:14:18] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:14:26,837  [INFO]  127.0.0.1 - - [29/Sep/2026 13:14:26] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:14:34,850  [INFO]  127.0.0.1 - - [29/Sep/2026 13:14:34] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:14:42,836  [INFO]  127.0.0.1 - - [29/Sep/2026 13:14:42] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:14:50,839  [INFO]  127.0.0.1 - - [29/Sep/2026 13:14:50] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:15:21,876  [INFO]  127.0.0.1 - - [29/Sep/2026 13:15:21] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:20:04,265  [INFO]  127.0.0.1 - - [29/Sep/2026 13:20:04] "GET /api/forms HTTP/1.1" 200 -
+2026-09-29 13:20:04,607  [INFO]  127.0.0.1 - - [29/Sep/2026 13:20:04] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:41:16,497  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:16] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:41:16,515  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:16] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:41:16,532  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:16] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:41:17,667  [ERROR]  Exception on /api/save-edit [POST]
+Traceback (most recent call last):
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\VS Code\Nirman Data Entry Automation\app.py", line 237, in save_edit
+    export_to_excel(all_records, OUTPUT_XLSX)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\VS Code\Nirman Data Entry Automation\workshop_extractor.py", line 431, in export_to_excel
+    with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
+         ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 62, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        path,
+        ^^^^^
+    ...<3 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\excel\_base.py", line 1281, in __init__
+    self._handles = get_handle(
+                    ~~~~~~~~~~^
+        path, mode, storage_options=storage_options, is_text=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\common.py", line 939, in get_handle
+    handle = open(handle, ioargs.mode)
+PermissionError: [Errno 13] Permission denied: 'C:\\VS Code\\Nirman Data Entry Automation\\workshop_ratings_output.xlsx'
+2026-10-16 12:41:17,683  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:17] "[35m[1mPOST /api/save-edit HTTP/1.1[0m" 500 -
+2026-10-16 12:41:24,504  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:24] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:41:32,502  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:32] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:41:40,510  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:40] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:41:48,511  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:48] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:41:56,515  [INFO]  127.0.0.1 - - [16/Oct/2026 12:41:56] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:42:04,504  [INFO]  127.0.0.1 - - [16/Oct/2026 12:42:04] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:42:12,512  [INFO]  127.0.0.1 - - [16/Oct/2026 12:42:12] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:42:20,507  [INFO]  127.0.0.1 - - [16/Oct/2026 12:42:20] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:42:28,515  [INFO]  127.0.0.1 - - [16/Oct/2026 12:42:28] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:42:36,505  [INFO]  127.0.0.1 - - [16/Oct/2026 12:42:36] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:42:44,507  [INFO]  127.0.0.1 - - [16/Oct/2026 12:42:44] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:42:52,811  [INFO]  127.0.0.1 - - [16/Oct/2026 12:42:52] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:43:00,813  [INFO]  127.0.0.1 - - [16/Oct/2026 12:43:00] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:43:08,823  [INFO]  127.0.0.1 - - [16/Oct/2026 12:43:08] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:43:16,811  [INFO]  127.0.0.1 - - [16/Oct/2026 12:43:16] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:43:24,513  [INFO]  127.0.0.1 - - [16/Oct/2026 12:43:24] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:43:32,513  [INFO]  127.0.0.1 - - [16/Oct/2026 12:43:32] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:43:40,516  [INFO]  127.0.0.1 - - [16/Oct/2026 12:43:40] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:43:48,518  [INFO]  127.0.0.1 - - [16/Oct/2026 12:43:48] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:43:56,505  [INFO]  127.0.0.1 - - [16/Oct/2026 12:43:56] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:44:04,511  [INFO]  127.0.0.1 - - [16/Oct/2026 12:44:04] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:44:12,509  [INFO]  127.0.0.1 - - [16/Oct/2026 12:44:12] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:44:20,505  [INFO]  127.0.0.1 - - [16/Oct/2026 12:44:20] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:44:28,510  [INFO]  127.0.0.1 - - [16/Oct/2026 12:44:28] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:44:36,509  [INFO]  127.0.0.1 - - [16/Oct/2026 12:44:36] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:44:44,515  [INFO]  127.0.0.1 - - [16/Oct/2026 12:44:44] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:44:52,514  [INFO]  127.0.0.1 - - [16/Oct/2026 12:44:52] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:45:00,512  [INFO]  127.0.0.1 - - [16/Oct/2026 12:45:00] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:45:08,517  [INFO]  127.0.0.1 - - [16/Oct/2026 12:45:08] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:45:16,502  [INFO]  127.0.0.1 - - [16/Oct/2026 12:45:16] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:45:24,525  [INFO]  127.0.0.1 - - [16/Oct/2026 12:45:24] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:45:32,516  [INFO]  127.0.0.1 - - [16/Oct/2026 12:45:32] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:45:40,505  [INFO]  127.0.0.1 - - [16/Oct/2026 12:45:40] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 12:46:54,392  [INFO]  127.0.0.1 - - [16/Oct/2026 12:46:54] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 13:46:16,767  [INFO]  127.0.0.1 - - [16/Oct/2026 13:46:16] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 13:46:17,827  [INFO]  127.0.0.1 - - [16/Oct/2026 13:46:17] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 13:46:27,102  [INFO]  127.0.0.1 - - [16/Oct/2026 13:46:27] "GET /api/forms HTTP/1.1" 200 -
+2026-10-16 13:46:29,376  [INFO]  127.0.0.1 - - [16/Oct/2026 13:46:29] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:04:24,650  [INFO]  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-10-22 03:04:24,651  [INFO]  [33mPress CTRL+C to quit[0m
+2026-10-22 03:04:26,279  [INFO]  127.0.0.1 - - [22/Oct/2026 03:04:26] "GET / HTTP/1.1" 200 -
+2026-10-22 03:04:26,704  [INFO]  127.0.0.1 - - [22/Oct/2026 03:04:26] "GET /api/schema HTTP/1.1" 200 -
+2026-10-22 03:04:26,707  [INFO]  127.0.0.1 - - [22/Oct/2026 03:04:26] "GET /api/schemas HTTP/1.1" 200 -
+2026-10-22 03:04:26,772  [INFO]  127.0.0.1 - - [22/Oct/2026 03:04:26] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:04:26,822  [INFO]  127.0.0.1 - - [22/Oct/2026 03:04:26] "GET /api/form-image/sampleform.jpeg HTTP/1.1" 200 -
+2026-10-22 03:04:26,949  [INFO]  127.0.0.1 - - [22/Oct/2026 03:04:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-10-22 03:06:34,204  [INFO]  Analyzing sample form: _sample.jpeg
+2026-10-22 03:06:34,277  [INFO]  Initialising Gemini client (model default: gemini-2.5-flash)
+2026-10-22 03:06:36,316  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 03:07:04,217  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-22 03:07:04,227  [INFO]  Token usage [gemini-2.5-flash]: prompt=820, candidates=5337, total=7483
+2026-10-22 03:07:04,232  [INFO]  Schema generated: 'NIRMAN: About Self.' with 39 fields from _sample.jpeg
+2026-10-22 03:07:04,238  [INFO]  Saved schema 'NIRMAN: About Self.' (9157e387-d6df-4a8c-a90d-3ef41184df23) → C:\VS Code\Nirman Data Entry Automation\schemas\9157e387-d6df-4a8c-a90d-3ef41184df23.json
+2026-10-22 03:07:04,240  [INFO]  127.0.0.1 - - [22/Oct/2026 03:07:04] "POST /api/analyze-sample HTTP/1.1" 200 -
+2026-10-22 03:07:50,090  [INFO]  Refining schema 'NIRMAN: About Self.' with user edits
+2026-10-22 03:07:50,091  [INFO]  Schema fields replaced: 39 fields in refined schema
+2026-10-22 03:07:50,093  [INFO]  Saved schema 'NIRMAN: About Self.' (9157e387-d6df-4a8c-a90d-3ef41184df23) → C:\VS Code\Nirman Data Entry Automation\schemas\9157e387-d6df-4a8c-a90d-3ef41184df23.json
+2026-10-22 03:07:50,094  [INFO]  127.0.0.1 - - [22/Oct/2026 03:07:50] "PUT /api/schema HTTP/1.1" 200 -
+2026-10-22 03:07:50,102  [INFO]  127.0.0.1 - - [22/Oct/2026 03:07:50] "POST /api/schema/confirm HTTP/1.1" 200 -
+2026-10-22 03:08:00,327  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:00] "POST /api/start HTTP/1.1" 200 -
+2026-10-22 03:08:00,341  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:00] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:08:01,171  [INFO]  Found 0 image(s) in 'C:\VS Code\Nirman Data Entry Automation\uploads'.
+2026-10-22 03:08:01,172  [INFO]  Found 1 image(s) in 'C:\VS Code\Nirman Data Entry Automation\forms'.
+2026-10-22 03:08:01,174  [INFO]  Processing: C:\VS Code\Nirman Data Entry Automation\forms\sampleform.jpeg
+2026-10-22 03:08:01,211  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 03:08:01,833  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:01] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:03,343  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:03] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:04,858  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:04] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:06,341  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:06] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:07,840  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:07] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:08,614  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-22 03:08:08,617  [INFO]  Token usage [gemini-2.5-flash]: prompt=698, candidates=11, total=1796
+2026-10-22 03:08:08,617  [INFO]    Pre-scan flagged messy fields: ['Q26']
+2026-10-22 03:08:08,652  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 03:08:09,340  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:09] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:10,841  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:10] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:12,347  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:12] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:13,839  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:13] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:15,355  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:15] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:16,841  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:16] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:18,341  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:18] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:18,544  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-22 03:08:18,546  [INFO]  Token usage [gemini-2.5-flash]: prompt=1966, candidates=930, total=3742
+2026-10-22 03:08:18,553  [WARNING]    [OVERRIDE] Q26: forced to ILLEGIBLE (messy handwriting in pre-scan)
+2026-10-22 03:08:18,553  [INFO]    [DONE] sampleform.jpeg — Status: partial, Review Required: True, Valid: 38/39
+2026-10-22 03:08:18,748  [INFO]  Workbook saved to C:\VS Code\Nirman Data Entry Automation\output\nirman_output.xlsx
+2026-10-22 03:08:18,748  [INFO]  BATCH_SUMMARY | total=1 | success=0 | failed=0 | review=1
+2026-10-22 03:08:19,843  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:19] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 03:08:19,854  [INFO]  127.0.0.1 - - [22/Oct/2026 03:08:19] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:09:04,819  [INFO]  Workbook saved to C:\VS Code\Nirman Data Entry Automation\output\nirman_output.xlsx
+2026-10-22 03:09:04,821  [INFO]  127.0.0.1 - - [22/Oct/2026 03:09:04] "POST /api/save-edit HTTP/1.1" 200 -
+2026-10-22 03:09:16,147  [INFO]  127.0.0.1 - - [22/Oct/2026 03:09:16] "GET /api/open-excel HTTP/1.1" 200 -
+2026-10-22 03:10:58,658  [INFO]  Generating report text for batch f3a02520-d310-4dcb-8180-81b55a3df8b1 (1 records, schema 'NIRMAN: About Self.')
+2026-10-22 03:10:58,660  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 03:11:13,094  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-22 03:11:13,097  [INFO]  Token usage [gemini-2.5-flash]: prompt=5888, candidates=1710, total=8852
+2026-10-22 03:11:13,097  [INFO]  Report generated successfully (6748 chars)
+2026-10-22 03:11:13,098  [INFO]  Generating report text for batch f3a02520-d310-4dcb-8180-81b55a3df8b1 (1 records, schema 'NIRMAN: About Self.')
+2026-10-22 03:11:13,099  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 03:11:28,453  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-22 03:11:28,457  [INFO]  Token usage [gemini-2.5-flash]: prompt=5888, candidates=1710, total=8852
+2026-10-22 03:11:28,457  [INFO]  Report generated successfully (6748 chars)
+2026-10-22 03:11:28,465  [INFO]  Report saved to C:\VS Code\Nirman Data Entry Automation\output\nirman_report.md
+2026-10-22 03:11:28,466  [INFO]  127.0.0.1 - - [22/Oct/2026 03:11:28] "POST /api/generate-report HTTP/1.1" 200 -
+2026-10-22 03:12:51,956  [INFO]  127.0.0.1 - - [22/Oct/2026 03:12:51] "GET /api/download-report HTTP/1.1" 200 -
+2026-10-22 03:13:56,177  [INFO]  127.0.0.1 - - [22/Oct/2026 03:13:56] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:13:59,707  [INFO]  127.0.0.1 - - [22/Oct/2026 03:13:59] "GET / HTTP/1.1" 200 -
+2026-10-22 03:13:59,732  [INFO]  127.0.0.1 - - [22/Oct/2026 03:13:59] "GET /api/schema HTTP/1.1" 200 -
+2026-10-22 03:13:59,737  [INFO]  127.0.0.1 - - [22/Oct/2026 03:13:59] "GET /api/schemas HTTP/1.1" 200 -
+2026-10-22 03:13:59,762  [INFO]  127.0.0.1 - - [22/Oct/2026 03:13:59] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:13:59,772  [INFO]  127.0.0.1 - - [22/Oct/2026 03:13:59] "[36mGET /api/form-image/sampleform.jpeg HTTP/1.1[0m" 304 -
+2026-10-22 03:14:07,751  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:07] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:14:13,697  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:13] "GET / HTTP/1.1" 200 -
+2026-10-22 03:14:13,718  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:13] "GET /api/schema HTTP/1.1" 200 -
+2026-10-22 03:14:13,722  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:13] "GET /api/schemas HTTP/1.1" 200 -
+2026-10-22 03:14:13,739  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:13] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:14:13,753  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:13] "[36mGET /api/form-image/sampleform.jpeg HTTP/1.1[0m" 304 -
+2026-10-22 03:14:17,194  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:17] "GET / HTTP/1.1" 200 -
+2026-10-22 03:14:17,216  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:17] "GET /api/schema HTTP/1.1" 200 -
+2026-10-22 03:14:17,217  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:17] "GET /api/schemas HTTP/1.1" 200 -
+2026-10-22 03:14:17,226  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:17] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:14:17,235  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:17] "[36mGET /api/form-image/sampleform.jpeg HTTP/1.1[0m" 304 -
+2026-10-22 03:14:22,267  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:22] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 03:14:27,707  [INFO]  127.0.0.1 - - [22/Oct/2026 03:14:27] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 12:35:22,047  [INFO]  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-10-22 12:35:22,048  [INFO]  [33mPress CTRL+C to quit[0m
+2026-10-22 12:35:23,724  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:23] "GET / HTTP/1.1" 200 -
+2026-10-22 12:35:23,767  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:23] "GET /api/schema HTTP/1.1" 200 -
+2026-10-22 12:35:23,774  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:23] "GET /api/schemas HTTP/1.1" 200 -
+2026-10-22 12:35:23,921  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:23] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 12:35:24,000  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:24] "[36mGET /api/form-image/sampleform.jpeg HTTP/1.1[0m" 304 -
+2026-10-22 12:35:29,662  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:29] "POST /api/schema/load/9157e387-d6df-4a8c-a90d-3ef41184df23 HTTP/1.1" 200 -
+2026-10-22 12:35:40,235  [INFO]  Refining schema 'NIRMAN: About Self.' with user edits
+2026-10-22 12:35:40,238  [INFO]  Schema fields replaced: 39 fields in refined schema
+2026-10-22 12:35:40,243  [INFO]  Saved schema 'NIRMAN: About Self.' (9157e387-d6df-4a8c-a90d-3ef41184df23) → C:\VS Code\Nirman Data Entry Automation\schemas\9157e387-d6df-4a8c-a90d-3ef41184df23.json
+2026-10-22 12:35:40,245  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:40] "PUT /api/schema HTTP/1.1" 200 -
+2026-10-22 12:35:40,252  [INFO]  Refining schema 'NIRMAN: About Self.' with user edits
+2026-10-22 12:35:40,255  [INFO]  Schema fields replaced: 39 fields in refined schema
+2026-10-22 12:35:40,258  [INFO]  Saved schema 'NIRMAN: About Self.' (9157e387-d6df-4a8c-a90d-3ef41184df23) → C:\VS Code\Nirman Data Entry Automation\schemas\9157e387-d6df-4a8c-a90d-3ef41184df23.json
+2026-10-22 12:35:40,260  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:40] "PUT /api/schema HTTP/1.1" 200 -
+2026-10-22 12:35:40,267  [INFO]  Refining schema 'NIRMAN: About Self.' with user edits
+2026-10-22 12:35:40,269  [INFO]  Schema fields replaced: 39 fields in refined schema
+2026-10-22 12:35:40,271  [INFO]  Saved schema 'NIRMAN: About Self.' (9157e387-d6df-4a8c-a90d-3ef41184df23) → C:\VS Code\Nirman Data Entry Automation\schemas\9157e387-d6df-4a8c-a90d-3ef41184df23.json
+2026-10-22 12:35:40,273  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:40] "PUT /api/schema HTTP/1.1" 200 -
+2026-10-22 12:35:40,285  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:40] "POST /api/schema/confirm HTTP/1.1" 200 -
+2026-10-22 12:35:40,342  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:40] "POST /api/schema/confirm HTTP/1.1" 200 -
+2026-10-22 12:35:40,362  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:40] "POST /api/schema/confirm HTTP/1.1" 200 -
+2026-10-22 12:35:46,955  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:46] "POST /api/start HTTP/1.1" 200 -
+2026-10-22 12:35:46,964  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:46] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 12:35:47,993  [INFO]  Found 0 image(s) in 'C:\VS Code\Nirman Data Entry Automation\uploads'.
+2026-10-22 12:35:47,994  [INFO]  Found 1 image(s) in 'C:\VS Code\Nirman Data Entry Automation\forms'.
+2026-10-22 12:35:47,996  [INFO]  Processing: C:\VS Code\Nirman Data Entry Automation\forms\sampleform.jpeg
+2026-10-22 12:35:48,115  [INFO]  Initialising Gemini client (model default: gemini-2.5-flash)
+2026-10-22 12:35:48,517  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:48] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:35:49,966  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:49] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:35:50,273  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 12:35:51,469  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:51] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:35:52,974  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:52] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:35:54,467  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:54] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:35:55,967  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:55] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:35:57,465  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:57] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:35:58,966  [INFO]  127.0.0.1 - - [22/Oct/2026 12:35:58] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:00,473  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:00] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:01,970  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:01] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:03,464  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:03] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:04,967  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:04] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:06,471  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:06] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:07,980  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:07] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:09,475  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:09] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:10,968  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:10] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:12,467  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:12] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:13,965  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:13] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:15,472  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:15] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:16,974  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:16] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:18,466  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:18] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:20,295  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:20] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:22,173  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:22] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:23,182  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:23] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:25,172  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:25] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:26,184  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:26] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:28,180  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:28] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:29,183  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:29] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:31,178  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:31] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:32,182  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:32] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:34,178  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:34] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:34,360  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-22 12:36:34,363  [WARNING]  Transient API error (503/UNAVAILABLE). Attempt 1/4 — retrying in 5.0s: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-10-22 12:36:35,183  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:35] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:37,178  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:37] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:38,184  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:38] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:39,364  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 12:36:40,178  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:40] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:41,175  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:41] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:43,174  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:43] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:44,174  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:44] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:46,184  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:46] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:47,184  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:47] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:49,174  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:49] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:50,174  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:50] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:52,172  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:52] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:53,173  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:53] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:54,947  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-22 12:36:54,953  [INFO]  Token usage [gemini-2.5-flash]: prompt=698, candidates=11, total=1932
+2026-10-22 12:36:54,954  [INFO]    Pre-scan flagged messy fields: ['Q26']
+2026-10-22 12:36:55,015  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 12:36:55,179  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:55] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:56,185  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:56] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:58,180  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:58] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:36:59,177  [INFO]  127.0.0.1 - - [22/Oct/2026 12:36:59] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:01,182  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:01] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:02,185  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:02] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:04,183  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:04] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:05,178  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:05] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:07,172  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:07] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:08,179  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:08] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:10,170  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:10] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:11,179  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:11] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:13,179  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:13] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:14,175  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:14] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:16,172  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:16] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:17,179  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:17] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:19,186  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:19] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:32,209  [INFO]  127.0.0.1 - - [22/Oct/2026 12:37:32] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:37:47,337  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-22 12:37:47,339  [WARNING]  Transient API error (503/UNAVAILABLE). Attempt 1/4 — retrying in 5.0s: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-10-22 12:37:52,340  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 12:37:57,981  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-10-22 12:37:57,983  [WARNING]  Transient API error (503/UNAVAILABLE). Attempt 2/4 — retrying in 10.0s: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-10-22 12:38:07,984  [INFO]  AFC is enabled with max remote calls: 10.
+2026-10-22 12:38:22,046  [INFO]  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-22 12:38:22,049  [INFO]  Token usage [gemini-2.5-flash]: prompt=1966, candidates=930, total=3794
+2026-10-22 12:38:22,102  [WARNING]    [OVERRIDE] Q26: forced to ILLEGIBLE (messy handwriting in pre-scan)
+2026-10-22 12:38:22,103  [INFO]    [DONE] sampleform.jpeg — Status: partial, Review Required: True, Valid: 38/39
+2026-10-22 12:38:22,229  [ERROR]  Failed to save workbook to C:\VS Code\Nirman Data Entry Automation\output\nirman_output.xlsx
+Traceback (most recent call last):
+  File "C:\VS Code\Nirman Data Entry Automation\nirman\excel_export.py", line 116, in export_workbook
+    wb.save(output_path)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\openpyxl\workbook\workbook.py", line 386, in save
+    save_workbook(self, filename)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "C:\Users\VICTUS\AppData\Local\Python\pythoncore-3.14-64\Lib\zipfile\__init__.py", line 1453, in __init__
+    self.fp = io.open(file, filemode)
+              ~~~~~~~^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\VS Code\\Nirman Data Entry Automation\\output\\nirman_output.xlsx'
+2026-10-22 12:38:32,174  [INFO]  127.0.0.1 - - [22/Oct/2026 12:38:32] "GET /api/state HTTP/1.1" 200 -
+2026-10-22 12:38:32,189  [INFO]  127.0.0.1 - - [22/Oct/2026 12:38:32] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 16:49:50,567  [INFO]  127.0.0.1 - - [22/Oct/2026 16:49:50] "GET /api/schema HTTP/1.1" 200 -
+2026-10-22 16:49:50,599  [INFO]  127.0.0.1 - - [22/Oct/2026 16:49:50] "GET /api/forms HTTP/1.1" 200 -
+2026-10-22 16:49:50,626  [INFO]  127.0.0.1 - - [22/Oct/2026 16:49:50] "[36mGET /api/form-image/sampleform.jpeg HTTP/1.1[0m" 304 -
+2026-10-22 16:50:04,158  [INFO]  127.0.0.1 - - [22/Oct/2026 16:50:04] "GET /api/forms HTTP/1.1" 200 -

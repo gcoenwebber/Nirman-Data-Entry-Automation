@@ -1,3 +1,17 @@
 .env
 __pycache__/
 *.pyc
+.venv/
+*.egg-info/
+dist/
+build/
+uploads/*
+!uploads/.gitkeep
+output/*
+!output/.gitkeep
+schemas/*
+!schemas/.gitkeep
+extraction_log.txt
+results.json
+_legacy/
+.pytest_cache/
